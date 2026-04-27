@@ -1,0 +1,16 @@
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\GereOficicina.exe.config
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\GereOficicina.exe
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\GereOficicina.pdb
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.Properties.Resources.resources
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOfic.7AF20675.Up2Date
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.exe
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.pdb
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.Form1.resources
+C:\Users\Administrator\Documents\IPL\Desenv_Aplicacoes\Ficha10_2\GereOficicina\obj\Debug\GereOficicina.View.Detalhes.resources
