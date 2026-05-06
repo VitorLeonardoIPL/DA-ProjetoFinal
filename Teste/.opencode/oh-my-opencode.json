@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/dev/packages/oh-my-opencode/dist/oh-my-opencode.schema.json",
+  "sisyphus": {
+    "model": "github-copilot/claude-haiku-4.5",
+    "maxTokens": 64000
+  },
+  "agents": {
+    "oracle": {
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "librarian": {
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "explore": {
+      "model": "github-copilot/claude-haiku-4.5"
+    }
+  }
+}
