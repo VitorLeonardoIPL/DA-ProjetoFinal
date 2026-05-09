@@ -50,4 +50,9 @@ Thumbs.db
 # Project specific
 *.log
 
+# .NET build artifacts
+bin/
+obj/
+packages/
+
 Teste/nul

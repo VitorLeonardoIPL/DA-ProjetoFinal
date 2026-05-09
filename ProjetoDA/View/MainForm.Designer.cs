@@ -31,29 +31,30 @@
             this.components = new System.ComponentModel.Container();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.menuButton = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button_dashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button_TipoArtigo = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button_Artigos = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button_Orcamento = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button_Estatistica = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.contentPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.menuButton = new System.Windows.Forms.PictureBox();
-            this.button_dashboard = new System.Windows.Forms.Button();
-            this.button_TipoArtigo = new System.Windows.Forms.Button();
-            this.button_Artigos = new System.Windows.Forms.Button();
-            this.button_Orcamento = new System.Windows.Forms.Button();
-            this.button_Estatistica = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -62,7 +63,6 @@
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -96,6 +96,16 @@
             this.Panel1.Size = new System.Drawing.Size(197, 90);
             this.Panel1.TabIndex = 0;
             // 
+            // menuButton
+            // 
+            this.menuButton.Image = global::ProjetoDA.Properties.Resources.icons8_menu_261;
+            this.menuButton.Location = new System.Drawing.Point(19, 37);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(33, 30);
+            this.menuButton.TabIndex = 4;
+            this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -118,95 +128,6 @@
             this.panel3.Size = new System.Drawing.Size(188, 52);
             this.panel3.TabIndex = 2;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button_TipoArtigo);
-            this.panel4.Location = new System.Drawing.Point(3, 157);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(188, 52);
-            this.panel4.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button_Artigos);
-            this.panel5.Location = new System.Drawing.Point(3, 215);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(188, 52);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.button_Orcamento);
-            this.panel6.Location = new System.Drawing.Point(3, 273);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(188, 52);
-            this.panel6.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.button_Estatistica);
-            this.panel7.Location = new System.Drawing.Point(3, 331);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(188, 52);
-            this.panel7.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(3, 389);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 52);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // SidebarTimer
-            // 
-            this.SidebarTimer.Interval = 10;
-            this.SidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_Tick);
-            // 
-            // contentPanel
-            // 
-            this.contentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(200, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1724, 753);
-            this.contentPanel.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button8);
-            this.panel8.Location = new System.Drawing.Point(3, 447);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(188, 52);
-            this.panel8.TabIndex = 8;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(3, 505);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(188, 52);
-            this.panel9.TabIndex = 9;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.button9);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(3, 563);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(188, 52);
-            this.panel10.TabIndex = 10;
-            // 
-            // menuButton
-            // 
-            this.menuButton.Image = global::ProjetoDA.Properties.Resources.icons8_menu_261;
-            this.menuButton.Location = new System.Drawing.Point(19, 37);
-            this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(33, 30);
-            this.menuButton.TabIndex = 4;
-            this.menuButton.TabStop = false;
-            this.menuButton.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // button_dashboard
             // 
             this.button_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -223,6 +144,14 @@
             this.button_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_dashboard.UseVisualStyleBackColor = true;
             this.button_dashboard.Click += new System.EventHandler(this.button_dashboard_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button_TipoArtigo);
+            this.panel4.Location = new System.Drawing.Point(3, 157);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(188, 52);
+            this.panel4.TabIndex = 3;
             // 
             // button_TipoArtigo
             // 
@@ -241,6 +170,14 @@
             this.button_TipoArtigo.UseVisualStyleBackColor = true;
             this.button_TipoArtigo.Click += new System.EventHandler(this.button_TipoArtigo_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button_Artigos);
+            this.panel5.Location = new System.Drawing.Point(3, 215);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(188, 52);
+            this.panel5.TabIndex = 4;
+            // 
             // button_Artigos
             // 
             this.button_Artigos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,6 +194,14 @@
             this.button_Artigos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Artigos.UseVisualStyleBackColor = true;
             this.button_Artigos.Click += new System.EventHandler(this.button_Artigos_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.button_Orcamento);
+            this.panel6.Location = new System.Drawing.Point(3, 273);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(188, 52);
+            this.panel6.TabIndex = 5;
             // 
             // button_Orcamento
             // 
@@ -275,6 +220,14 @@
             this.button_Orcamento.UseVisualStyleBackColor = true;
             this.button_Orcamento.Click += new System.EventHandler(this.button_Orcamento_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.button_Estatistica);
+            this.panel7.Location = new System.Drawing.Point(3, 331);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(188, 52);
+            this.panel7.TabIndex = 6;
+            // 
             // button_Estatistica
             // 
             this.button_Estatistica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -291,6 +244,15 @@
             this.button_Estatistica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Estatistica.UseVisualStyleBackColor = true;
             this.button_Estatistica.Click += new System.EventHandler(this.button_Estatistica_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(3, 389);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(188, 52);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
@@ -309,6 +271,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button8);
+            this.panel8.Location = new System.Drawing.Point(3, 447);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(188, 52);
+            this.panel8.TabIndex = 8;
+            // 
             // button8
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -324,6 +294,22 @@
             this.button8.Text = "           CENAS1";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(3, 505);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(188, 52);
+            this.panel9.TabIndex = 9;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.button9);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(3, 563);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(188, 52);
+            this.panel10.TabIndex = 10;
             // 
             // button9
             // 
@@ -341,6 +327,20 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // SidebarTimer
+            // 
+            this.SidebarTimer.Interval = 10;
+            this.SidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_Tick);
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(200, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1724, 753);
+            this.contentPanel.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,6 +352,7 @@
             this.Text = "iShopping";
             this.sidebar.ResumeLayout(false);
             this.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -360,7 +361,6 @@
             this.panel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.ResumeLayout(false);
 
         }
