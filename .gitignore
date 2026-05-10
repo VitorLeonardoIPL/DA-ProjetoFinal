@@ -1,11 +1,26 @@
 # Jira Integration (NEVER commit)
-.env
-.env.local
-.env.*.local
+jira/
 
 # .NET build artifacts
 bin/
 obj/
 packages/
 
-Teste/nul
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.vsidx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Project specific
+*.log
