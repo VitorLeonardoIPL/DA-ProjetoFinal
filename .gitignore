@@ -12,6 +12,8 @@ packages/
 .idea/
 *.suo
 *.vsidx
+*.DotSettings.user
+*.DotSettings
 
 # OS
 .DS_Store
@@ -24,3 +26,4 @@ Thumbs.db
 
 # Project specific
 *.log
+Teste/nul
