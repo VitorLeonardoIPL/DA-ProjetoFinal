@@ -1,0 +1,6 @@
+Instalar o Entity Framework via NuGet (como fizemos na Ficha10_2):
+
+Clicar com o botão direito no projeto ProjetoDA → Manage NuGet Packages
+Procurar por EntityFramework
+Instalar a versão 6.x (a mesma da Ficha10_2)
+Depois de instalar, o EF adiciona automaticamente a referência e o App.config ficará com a connection string para configurar o SQL Server.
