@@ -179,9 +179,21 @@
     <None Include="Resources\icons8-menu-261.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
+    <Compile Include="Controller\SessaoAtual.cs" />
+    <Compile Include="Controller\UtilizadorController.cs" />
+    <Compile Include="Controller\ArtigoController.cs" />
+    <Compile Include="Controller\OrcamentoController.cs" />
+    <Compile Include="Controller\CompraController.cs" />
+    <Compile Include="Controller\EstatisticaController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+  <!-- Copia DLL extra necessária para o Mono runtime (System.Resources.Extensions precisa disto) -->
+  <Target Name="CopyExtraMonoAssemblies" AfterTargets="AfterBuild">
+    <Copy SourceFiles="/usr/lib/mono/msbuild/Current/bin/System.Runtime.CompilerServices.Unsafe.dll"
+          DestinationFolder="$(OutputPath)"
+          Condition="Exists('/usr/lib/mono/msbuild/Current/bin/System.Runtime.CompilerServices.Unsafe.dll') And !Exists('$(OutputPath)\System.Runtime.CompilerServices.Unsafe.dll')" />
+  </Target>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
