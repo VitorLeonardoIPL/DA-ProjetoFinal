@@ -1,0 +1,20 @@
+<Project>
+  <!--
+    This file enables building .NET Framework WinForms projects on Linux.
+    Required for 'dotnet build' compatibility.
+    On Windows, use Visual Studio or the regular .NET Framework SDK.
+  -->
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <!-- Point to Mono reference assemblies (required for .NET Framework projects on Linux) -->
+    <FrameworkPathOverride Condition="Exists('/usr/lib/mono/4.8-api')">/usr/lib/mono/4.8-api</FrameworkPathOverride>
+    <!-- .resx files with images require preserialized resources in .NET SDK -->
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
+
+  <!-- Add System.Resources.Extensions for .resx processing on Linux -->
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT' And Exists('/usr/lib/mono/msbuild/Current/bin/System.Resources.Extensions.dll')">
+    <Reference Include="System.Resources.Extensions">
+      <HintPath>/usr/lib/mono/msbuild/Current/bin/System.Resources.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
