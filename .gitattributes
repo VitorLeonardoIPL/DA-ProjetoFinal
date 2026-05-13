@@ -1,0 +1,27 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# C# source files
+*.cs text diff=csharp
+
+# XML config files
+*.csproj text
+*.config text
+*.resx text
+*.settings text
+*.sln text
+
+# Image files - binary
+*.png binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+
+# Binary files
+*.exe binary
+*.dll binary
+*.pdb binary
+*.vsidx binary
+*.suo binary

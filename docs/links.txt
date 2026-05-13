@@ -1,0 +1,8 @@
+https://icons8.com/icons/set/plus--white - > icons
+
+https://www.figma.com/make/W3gOexUMIlmqu3BkofVytQ/Sistema-de-Gestão-de-Compras?p=f&t=5DdoZF67UOZK8rXO-0&fullscreen=1 -> mockups
+
+https://mermaid.ai/app/projects/5a9724b5-ef35-4d01-aa4d-0291db67757b/diagrams/c293d7d1-1224-40b5-8231-a68ac8070bd4/version/v0.1/edit -> diagrama
+
+https://my-team-ht1gik22.atlassian.net/jira/software/projects/PROJ/boards/36/backlog -> jira
+
