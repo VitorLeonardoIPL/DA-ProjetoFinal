@@ -18,7 +18,8 @@ namespace ProjetoDA.Model
             {
                 Username = "admin",
                 Email = "admin@ipl.pt",
-                Password = "admin123" // Senha simples apenas para desenvolvimento!
+                Password = "admin123",
+                DataCriacao = DateTime.Now
             });
           
           
@@ -26,7 +27,6 @@ namespace ProjetoDA.Model
 
 
             base.Seed(context);
+        }
     }
 }
-    }
-

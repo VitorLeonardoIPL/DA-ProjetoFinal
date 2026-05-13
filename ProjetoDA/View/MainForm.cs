@@ -14,7 +14,6 @@ namespace ProjetoDA
     public partial class MainForm : Form
     {
 
-
         bool sidebarExpand;
         private Dashboard dashboardView;
         private TipoArtigo tipoArtigoView;
@@ -27,7 +26,7 @@ namespace ProjetoDA
         public MainForm()
         {
             InitializeComponent();
-            
+
             // Criar uma instância de cada UserControl
             dashboardView = new Dashboard();
             tipoArtigoView = new TipoArtigo();

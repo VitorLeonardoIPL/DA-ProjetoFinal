@@ -9,5 +9,8 @@ namespace ProjetoDA.Controller
     public static class SessaoAtual
     {
         public static Utilizador UtilizadorLogado { get; set; }
+
+
+
     }
 }

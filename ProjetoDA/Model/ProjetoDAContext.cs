@@ -4,6 +4,10 @@ namespace ProjetoDA.Model
 {
     public class ProjetoDAContext : DbContext
     {
+        public ProjetoDAContext() : base("name=ProjetoDAContext")
+        {
+        }
+
         public DbSet<Utilizador> Utilizadores { get; set; }
         public DbSet<TipoArtigo> TiposArtigo { get; set; }
         public DbSet<Artigo> Artigos { get; set; }

@@ -19,7 +19,17 @@ namespace ProjetoDA
             Database.SetInitializer(new AppDbInitializer());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            var loginForm = new View.Login_Page();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainForm());
+            }
+
+
+
+
+
         }
     }
 }

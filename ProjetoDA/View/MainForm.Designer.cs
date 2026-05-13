@@ -299,7 +299,7 @@
             // 
             this.panel9.Location = new System.Drawing.Point(3, 505);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(188, 52);
+            this.panel9.Size = new System.Drawing.Size(197, 52);
             this.panel9.TabIndex = 9;
             // 
             // panel10
