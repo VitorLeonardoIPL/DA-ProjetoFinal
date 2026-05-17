@@ -26,10 +26,6 @@ namespace ProjetoDA
                 Application.Run(new MainForm());
             }
 
-
-
-
-
         }
     }
 }

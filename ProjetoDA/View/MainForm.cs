@@ -20,20 +20,27 @@ namespace ProjetoDA
         private Artigo artigosView;
         private Orcamento orcamentoView;
         private Estatistica estatisticasView;
-
-
+        public NovaCompra novaCompraView;
+        public NovoArtigo novoArtigoView;
+        public NovoTipoArtigo novoTipoArtigoView;
+        public NovoOrcamento novoOrcamentoView;
 
         public MainForm()
         {
             InitializeComponent();
 
-            // Criar uma instância de cada UserControl
+            // Criar uma instância de cada UserControl Menu
             dashboardView = new Dashboard();
             tipoArtigoView = new TipoArtigo();
             artigosView = new Artigo();
             orcamentoView = new Orcamento();
             estatisticasView = new Estatistica();
 
+            // Views Para adicionar Entidades
+            novaCompraView = new NovaCompra();
+            novoArtigoView = new NovoArtigo();
+            novoTipoArtigoView = new NovoTipoArtigo();
+            novoOrcamentoView = new NovoOrcamento();
 
             // Mostrar o Dashboard por defeito ao abrir
             contentPanel.Controls.Clear();
@@ -124,6 +131,45 @@ namespace ProjetoDA
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(estatisticasView);
             estatisticasView.Dock = DockStyle.Fill;
+        }
+
+        public void ShowNovaCompra()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(novaCompraView);
+            novaCompraView.Dock = DockStyle.Fill;
+        }
+
+        public void ShowNovoArtigo()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(novoArtigoView);
+            novoArtigoView.Dock = DockStyle.Fill;
+        }
+
+        public void ShowNovoTipoArtigo()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(novoTipoArtigoView);
+            novoTipoArtigoView.Dock = DockStyle.Fill;
+        }
+
+        public void ShowNovoOrcamento()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(novoOrcamentoView);
+            novoOrcamentoView.Dock = DockStyle.Fill;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new View.Login_Page();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+                this.Show();
+            else
+                this.Close();
+
         }
     }
 }

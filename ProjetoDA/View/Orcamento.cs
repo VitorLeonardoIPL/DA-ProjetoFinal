@@ -16,5 +16,14 @@ namespace ProjetoDA.View
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowNovoOrcamento();
+            }
+        }
     }
 }
