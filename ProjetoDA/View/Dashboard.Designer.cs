@@ -31,7 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_NovaCompra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -64,26 +64,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Bem-vindo ao Sistema de Gestão de Compras";
             // 
-            // button1
+            // button_NovaCompra
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1009, 49);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(190, 57);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Nova Compra";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_NovaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.button_NovaCompra.ForeColor = System.Drawing.Color.White;
+            this.button_NovaCompra.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.button_NovaCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_NovaCompra.Location = new System.Drawing.Point(1009, 49);
+            this.button_NovaCompra.Name = "button_NovaCompra";
+            this.button_NovaCompra.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button_NovaCompra.Size = new System.Drawing.Size(190, 57);
+            this.button_NovaCompra.TabIndex = 3;
+            this.button_NovaCompra.Text = "Nova Compra";
+            this.button_NovaCompra.UseVisualStyleBackColor = false;
+            this.button_NovaCompra.Click += new System.EventHandler(this.button1_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_NovaCompra);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -99,6 +100,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_NovaCompra;
     }
 }

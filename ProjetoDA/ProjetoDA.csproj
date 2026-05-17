@@ -104,6 +104,30 @@
     <Compile Include="View\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NovaCompra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NovaCompra.Designer.cs">
+      <DependentUpon>NovaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NovoArtigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NovoArtigo.Designer.cs">
+      <DependentUpon>NovoArtigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NovoOrcamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NovoOrcamento.Designer.cs">
+      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NovoTipoArtigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NovoTipoArtigo.Designer.cs">
+      <DependentUpon>NovoTipoArtigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Orcamento.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +164,18 @@
     </Compile>
     <EmbeddedResource Include="View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NovaCompra.resx">
+      <DependentUpon>NovaCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NovoArtigo.resx">
+      <DependentUpon>NovoArtigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NovoOrcamento.resx">
+      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NovoTipoArtigo.resx">
+      <DependentUpon>NovoTipoArtigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Orcamento.resx">
       <DependentUpon>Orcamento.cs</DependentUpon>

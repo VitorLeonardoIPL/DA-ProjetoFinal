@@ -21,8 +21,6 @@ namespace ProjetoDA.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
                 using (var db = new ProjetoDAContext())
                 {
                     var user = UtilizadorController.Login(db, textBox1.Text, textBox2.Text);
@@ -38,13 +36,7 @@ namespace ProjetoDA.View
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao ligar à base de dados:\n{ex.Message}",
-                    "Erro de Ligação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+          
         }
     }
 }
