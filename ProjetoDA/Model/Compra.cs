@@ -8,12 +8,18 @@ namespace ProjetoDA.Model
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+
+      
+        public double total { get; set; }
+
         public bool Fechada { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime? DataFechada { get; set; }
 
         public int UtilizadorCriadoId { get; set; }
         public Utilizador UtilizadorCriado { get; set; }
+
+       
 
         public int? UtilizadorFechouId { get; set; }
         public Utilizador UtilizadorFechou { get; set; }
