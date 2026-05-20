@@ -72,6 +72,12 @@
     <Compile Include="Model\ItemPrevisto.cs" />
     <Compile Include="Model\ItemNaoPrevisto.cs" />
     <Compile Include="Model\ProjetoDAContext.cs" />
+    <Compile Include="View\AdicionarArtigoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdicionarArtigoForm.Designer.cs">
+      <DependentUpon>AdicionarArtigoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Artigo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="View\TipoArtigo.Designer.cs">
       <DependentUpon>TipoArtigo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AdicionarArtigoForm.resx">
+      <DependentUpon>AdicionarArtigoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Artigo.resx">
       <DependentUpon>Artigo.cs</DependentUpon>
     </EmbeddedResource>
