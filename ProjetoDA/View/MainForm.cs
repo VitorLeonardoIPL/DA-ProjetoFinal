@@ -161,6 +161,13 @@ namespace ProjetoDA
             novoOrcamentoView.Dock = DockStyle.Fill;
         }
 
+        public void ShowOrcamento()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(orcamentoView);
+            orcamentoView.Dock = DockStyle.Fill;
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             this.Hide();

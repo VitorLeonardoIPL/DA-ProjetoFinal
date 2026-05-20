@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxItems = new System.Windows.Forms.ListBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.textBoxNomeCompra = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.buttonGravarCompra = new System.Windows.Forms.Button();
             this.buttonAdicionarItem = new System.Windows.Forms.Button();
+            this.listBoxItems = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -50,17 +50,6 @@
             this.label1.Size = new System.Drawing.Size(201, 41);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nova Compra";
-            // 
-            // listBoxItems
-            // 
-            this.listBoxItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxItems.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listBoxItems.FormattingEnabled = true;
-            this.listBoxItems.ItemHeight = 16;
-            this.listBoxItems.Location = new System.Drawing.Point(104, 378);
-            this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(1121, 212);
-            this.listBoxItems.TabIndex = 14;
             // 
             // textBoxNomeCompra
             // 
@@ -143,6 +132,17 @@
             this.buttonAdicionarItem.UseVisualStyleBackColor = false;
             this.buttonAdicionarItem.Click += new System.EventHandler(this.buttonAdicionarItem_Click);
             // 
+            // listBoxItems
+            // 
+            this.listBoxItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.listBoxItems.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.listBoxItems.FormattingEnabled = true;
+            this.listBoxItems.ItemHeight = 16;
+            this.listBoxItems.Location = new System.Drawing.Point(104, 378);
+            this.listBoxItems.Name = "listBoxItems";
+            this.listBoxItems.Size = new System.Drawing.Size(1121, 212);
+            this.listBoxItems.TabIndex = 14;
+            // 
             // NovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,7 +166,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxItems;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox textBoxNomeCompra;
         private System.Windows.Forms.Label label2;
@@ -176,5 +175,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.Button buttonAdicionarItem;
+        private System.Windows.Forms.ListBox listBoxItems;
     }
 }
