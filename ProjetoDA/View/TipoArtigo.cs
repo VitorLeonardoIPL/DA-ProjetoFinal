@@ -6,24 +6,62 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetoDA.Model;
 using System.Windows.Forms;
+using ProjetoDA.Controller;
 
 namespace ProjetoDA.View
 {
-    public partial class TipoArtigo : UserControl
+    public partial class TipoArtigoControl : UserControl
     {
-        public TipoArtigo()
+        public TipoArtigoControl()
         {
             InitializeComponent();
+            AtualizarTiposArtigo();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddTipoArtigo(object sender, EventArgs e)
         {
-            var mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
+
+            ArtigoController TipoartigoController = new ArtigoController();
+            try
             {
-                mainForm.ShowNovoTipoArtigo();
+                TipoartigoController.InserirTipo(textBoxNome.Text);
+                AtualizarTiposArtigo();
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar o tipo de artigo");
+            }
+
+        }
+        private void AtualizarTiposArtigo()
+        {
+            listboxTiposArtigo.DataSource = null;
+
+            using (ProjetoDAContext context = new ProjetoDAContext())
+            {
+                listboxTiposArtigo.DataSource = context.TiposArtigo.ToList();
+            }
+            
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            TipoArtigo tipoArtigoSelecionado = listboxTiposArtigo.SelectedItem as TipoArtigo;
+            if (tipoArtigoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar tipo de artigo");
+                return;
+            }
+            ArtigoController controller = new ArtigoController();
+            controller.EliminarTipo(tipoArtigoSelecionado.Id);
+
+            AtualizarTiposArtigo();
         }
     }
 }

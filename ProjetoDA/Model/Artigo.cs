@@ -13,5 +13,15 @@ namespace ProjetoDA.Model
         public DateTime DataCriacao { get; set; }
 
         public TipoArtigo TipoArtigo { get; set; }
+
+
+
+        public override string ToString()
+        {
+            string descricao = $"{TipoArtigoId,-5} {Nome,-30} {Preco,10}"; ;
+
+            return descricao;
+        }
+
     }
 }
