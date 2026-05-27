@@ -13,19 +13,7 @@ namespace ProjetoDA.Controller
         /// <summary>
         /// Listagem mensal: orçamento, total de compras e diferença.
         /// </summary>
-        public static List<object[]> ListagemMensal(ProjetoDAContext db)
-        {
-            var orcamentos = db.Orcamentos.OrderBy(o => o.Ano).ThenBy(o => o.Mes).ToList();
-            var resultado = new List<object[]>();
-
-            foreach (var orc in orcamentos)
-            {
-                var total = TotalComprasMes(db, orc.Mes, orc.Ano);
-                resultado.Add(new object[] { $"{orc.Mes:D2}/{orc.Ano}", orc.Valor, total, orc.Valor - total });
-            }
-
-            return resultado;
-        }
+      
 
         /// <summary>
         /// Percentagem de artigos previstos e não previstos por compra fechada.
@@ -61,18 +49,7 @@ namespace ProjetoDA.Controller
         /// <summary>
         /// Sugere um orçamento para o próximo mês com base na média dos últimos 3 meses.
         /// </summary>
-        public static decimal SugerirOrcamento(ProjetoDAContext db)
-        {
-            var ultimosOrcamentos = db.Orcamentos
-                .OrderByDescending(o => o.Ano)
-                .ThenByDescending(o => o.Mes)
-                .Take(3)
-                .ToList();
-
-            if (ultimosOrcamentos.Count == 0) return 0;
-
-            return (decimal)ultimosOrcamentos.Average(o => (double)o.Valor);
-        }
+      
 
         /// <summary>
         /// Sugere uma lista de artigos com base na semana atual do mês em meses anteriores.

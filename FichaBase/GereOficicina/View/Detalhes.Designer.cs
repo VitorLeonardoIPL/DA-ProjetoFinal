@@ -37,18 +37,18 @@
             this.labelNome.AutoSize = true;
             this.labelNome.Location = new System.Drawing.Point(216, 53);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(44, 16);
+            this.labelNome.Size = new System.Drawing.Size(41, 16);
             this.labelNome.TabIndex = 0;
-            this.labelNome.Text = "label1";
+            this.labelNome.Text = "nome";
             // 
             // labelNif
             // 
             this.labelNif.AutoSize = true;
             this.labelNif.Location = new System.Drawing.Point(216, 149);
             this.labelNif.Name = "labelNif";
-            this.labelNif.Size = new System.Drawing.Size(44, 16);
+            this.labelNif.Size = new System.Drawing.Size(20, 16);
             this.labelNif.TabIndex = 1;
-            this.labelNif.Text = "label2";
+            this.labelNif.Text = "nif";
             // 
             // Detalhes
             // 

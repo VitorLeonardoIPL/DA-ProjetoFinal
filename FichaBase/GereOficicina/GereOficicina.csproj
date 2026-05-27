@@ -68,6 +68,7 @@
     <Compile Include="Model\OficinaContext.cs" />
     <Compile Include="Model\Parcela.cs" />
     <Compile Include="Model\Servico.cs" />
+    <Compile Include="Model\Servico1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Detalhes.cs">

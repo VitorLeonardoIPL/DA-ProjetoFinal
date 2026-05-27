@@ -20,11 +20,7 @@ namespace ProjetoDA.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowNovaCompra();
-            }
+            
 
         }
     }
