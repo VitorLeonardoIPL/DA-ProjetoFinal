@@ -22,5 +22,9 @@ namespace ProjetoDA.Model
         public Utilizador UtilizadorEditou { get; set; }
 
         public List<ItemCompra> ItensCompra { get; set; }
+
+        public string DisplayText => Fechada
+            ? $"{Nome} - {DataCriacao:dd/MM/yyyy} (Fechada)"
+            : $"{Nome} - {DataCriacao:dd/MM/yyyy} (Aberta)";
     }
 }

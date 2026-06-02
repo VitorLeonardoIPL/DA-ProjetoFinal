@@ -15,5 +15,7 @@ namespace ProjetoDA.Model
 
         public int? UtilizadorEditouId { get; set; }
         public Utilizador UtilizadorEditou { get; set; }
+
+        public string DisplayText => $"{Mes:D2}/{Ano} - {Valor:F2}€";
     }
 }

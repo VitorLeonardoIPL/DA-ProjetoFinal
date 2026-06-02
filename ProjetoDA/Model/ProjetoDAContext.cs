@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ProjetoDA.Model
 {
@@ -15,6 +16,8 @@ namespace ProjetoDA.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             // Compra tem 3 relacoes para Utilizador (cria, fechou, editou)
             // O EF nao consegue descobrir sozinho qual FK corresponde a qual
             modelBuilder.Entity<Compra>()
