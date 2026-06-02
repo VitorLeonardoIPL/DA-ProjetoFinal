@@ -5,6 +5,10 @@ namespace ProjetoDA.Model
 {
     public class ProjetoDAContext : DbContext
     {
+        public ProjetoDAContext() : base("name=ProjetoDAContext")
+        {
+        }
+
         public DbSet<Utilizador> Utilizadores { get; set; }
         public DbSet<TipoArtigo> TiposArtigo { get; set; }
         public DbSet<Artigo> Artigos { get; set; }
@@ -37,7 +41,7 @@ namespace ProjetoDA.Model
                 .HasForeignKey(c => c.UtilizadorEditouId);
 
             // Orcamento tem 2 relacoes para Utilizador (criou, editou)
-            modelBuilder.Entity<Orcamento>()
+          /*  modelBuilder.Entity<Orcamento>()
                 .HasRequired(o => o.UtilizadorCriado)
                 .WithMany()
                 .HasForeignKey(o => o.UtilizadorCriadoId)
@@ -46,7 +50,7 @@ namespace ProjetoDA.Model
             modelBuilder.Entity<Orcamento>()
                 .HasOptional(o => o.UtilizadorEditou)
                 .WithMany()
-                .HasForeignKey(o => o.UtilizadorEditouId);
+                .HasForeignKey(o => o.UtilizadorEditouId); */
 
             // ItemCompra -> ItemPrevisto: relacao 1 para 0..1
             // ItemPrevisto.Id = FK para ItemCompra.Id (chave partilhada)

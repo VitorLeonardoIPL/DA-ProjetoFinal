@@ -1,9 +1,16 @@
 ﻿namespace ProjetoDA.View
 {
-    partial class TipoArtigo
+    partial class TipoArtigoControl
     {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,33 +22,37 @@
 
         #region Component Designer generated code
 
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listTipos = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.listboxTiposArtigo = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelNome = new System.Windows.Forms.Label();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnNovo
+            // buttonAdd
             // 
-            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(925, 39);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnNovo.Size = new System.Drawing.Size(237, 57);
-            this.btnNovo.TabIndex = 7;
-            this.btnNovo.Text = "Novo Tipo de Artigo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(637, 39);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonAdd.Size = new System.Drawing.Size(237, 57);
+            this.buttonAdd.TabIndex = 7;
+            this.buttonAdd.Text = "Novo Tipo de Artigo";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAddTipoArtigo);
             // 
             // label1
             // 
@@ -53,99 +64,85 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Gestão de Tipos de Artigo";
             // 
-            // listTipos
+            // listboxTiposArtigo
             // 
-            this.listTipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listTipos.ForeColor = System.Drawing.Color.White;
-            this.listTipos.FormattingEnabled = true;
-            this.listTipos.ItemHeight = 16;
-            this.listTipos.Location = new System.Drawing.Point(41, 130);
-            this.listTipos.Name = "listTipos";
-            this.listTipos.Size = new System.Drawing.Size(1121, 180);
-            this.listTipos.TabIndex = 4;
-            this.listTipos.SelectedIndexChanged += new System.EventHandler(this.listTipos_SelectedIndexChanged);
+            this.listboxTiposArtigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.listboxTiposArtigo.Font = new System.Drawing.Font("Courier New", 10.2F);
+            this.listboxTiposArtigo.ForeColor = System.Drawing.Color.White;
+            this.listboxTiposArtigo.FormattingEnabled = true;
+            this.listboxTiposArtigo.ItemHeight = 20;
+            this.listboxTiposArtigo.Location = new System.Drawing.Point(60, 379);
+            this.listboxTiposArtigo.Name = "listboxTiposArtigo";
+            this.listboxTiposArtigo.Size = new System.Drawing.Size(1121, 284);
+            this.listboxTiposArtigo.TabIndex = 4;
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 340);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 28);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nome";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.labelNome);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(60, 338);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1121, 46);
+            this.panel1.TabIndex = 8;
             // 
-            // txtNome
+            // labelNome
             // 
-            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.Color.White;
-            this.txtNome.Location = new System.Drawing.Point(53, 371);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(400, 34);
-            this.txtNome.TabIndex = 9;
+            this.labelNome.AutoSize = true;
+            this.labelNome.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.labelNome.Location = new System.Drawing.Point(16, 8);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(80, 32);
+            this.labelNome.TabIndex = 0;
+            this.labelNome.Text = "Nome";
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonRemove.ForeColor = System.Drawing.Color.White;
+            this.buttonRemove.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemove.Location = new System.Drawing.Point(904, 39);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonRemove.Size = new System.Drawing.Size(237, 57);
+            this.buttonRemove.TabIndex = 9;
+            this.buttonRemove.Text = "       Remover Tipo de Artigo";
+            this.buttonRemove.UseVisualStyleBackColor = false;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(60, 179);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(255, 22);
+            this.textBoxNome.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 420);
+            this.label3.Location = new System.Drawing.Point(57, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 28);
+            this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Descrição";
+            this.label3.Text = "Nome do Artigo";
             // 
-            // txtDescricao
-            // 
-            this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.txtDescricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.ForeColor = System.Drawing.Color.White;
-            this.txtDescricao.Location = new System.Drawing.Point(53, 451);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(400, 34);
-            this.txtDescricao.TabIndex = 11;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(53, 520);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(150, 45);
-            this.btnGuardar.TabIndex = 12;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(220, 520);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // TipoArtigo
+            // TipoArtigoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listTipos);
-            this.Name = "TipoArtigo";
+            this.Controls.Add(this.listboxTiposArtigo);
+            this.Name = "TipoArtigoControl";
             this.Size = new System.Drawing.Size(1724, 753);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,14 +150,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listTipos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.ListBox listboxTiposArtigo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelNome;
+        private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }

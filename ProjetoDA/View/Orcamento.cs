@@ -6,88 +6,80 @@ using System.Windows.Forms;
 
 namespace ProjetoDA.View
 {
-    public partial class Orcamento : UserControl
+    public partial class OrcamentoControl : UserControl
     {
         private ProjetoDAContext db = new ProjetoDAContext();
-        private Model.Orcamento orcamentoSelecionado;
+        private Orcamento orcamentoSelecionado;
 
-        public Orcamento()
+        public OrcamentoControl()
         {
             InitializeComponent();
-            CarregarLista();
+            AtualizarLista();
         }
 
-        private void CarregarLista()
+        private void AtualizarLista()
         {
-            listOrcamentos.DataSource = OrcamentoController.Listar(db).ToList();
-            listOrcamentos.DisplayMember = "DisplayText";
-            listOrcamentos.ValueMember = "Id";
+            listBoxOrcamentos.DataSource = null;
+            listBoxOrcamentos.DataSource = OrcamentoController.Listar(db);
+            listBoxOrcamentos.DisplayMember = "Nome";
+            listBoxOrcamentos.ValueMember = "Id";
         }
 
         private void LimparCampos()
         {
-            txtValor.Text = "";
-            cmbMes.SelectedIndex = -1;
-            txtAno.Text = "";
+            textBoxNomeOrcamento.Text = "";
+            textBoxValor.Text = "";
+            dateTimePickerDataInicio.Value = DateTime.Today;
+            dateTimePickerDataFim.Value = DateTime.Today;
             orcamentoSelecionado = null;
+            listBoxOrcamentos.ClearSelected();
         }
 
-        private void listOrcamentos_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxOrcamentos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            orcamentoSelecionado = listOrcamentos.SelectedItem as Model.Orcamento;
+            orcamentoSelecionado = listBoxOrcamentos.SelectedItem as Orcamento;
             if (orcamentoSelecionado != null)
             {
-                txtValor.Text = orcamentoSelecionado.Valor.ToString("F2");
-                cmbMes.SelectedItem = orcamentoSelecionado.Mes.ToString("D2");
-                txtAno.Text = orcamentoSelecionado.Ano.ToString();
+                textBoxNomeOrcamento.Text = orcamentoSelecionado.Nome;
+                textBoxValor.Text = orcamentoSelecionado.Valor.ToString("F2");
+                dateTimePickerDataInicio.Value = orcamentoSelecionado.DataInicio;
+                dateTimePickerDataFim.Value = orcamentoSelecionado.DataFim;
             }
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void buttonNovoOrcamento_Click(object sender, EventArgs e)
         {
-            LimparCampos();
-            txtValor.Focus();
-        }
+            if (string.IsNullOrWhiteSpace(textBoxNomeOrcamento.Text))
+            {
+                MessageBox.Show("O nome é obrigatório.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (!decimal.TryParse(txtValor.Text, out decimal valor) || valor <= 0)
+            if (!decimal.TryParse(textBoxValor.Text, out decimal valor) || valor <= 0)
             {
                 MessageBox.Show("Insira um valor válido.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (cmbMes.SelectedItem == null)
-            {
-                MessageBox.Show("Selecione o mês.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!int.TryParse(txtAno.Text, out int ano) || ano < 2000 || ano > 2100)
-            {
-                MessageBox.Show("Insira um ano válido (2000-2100).", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int mes = int.Parse(cmbMes.SelectedItem.ToString().Split('-')[0].Trim());
-
             if (orcamentoSelecionado == null)
             {
-                OrcamentoController.Inserir(db, mes, ano, valor);
+                OrcamentoController controller = new OrcamentoController();
+                controller.Inserir(textBoxNomeOrcamento.Text.Trim(), valor, dateTimePickerDataInicio.Value, dateTimePickerDataFim.Value);
             }
             else
             {
+                orcamentoSelecionado.Nome = textBoxNomeOrcamento.Text.Trim();
                 orcamentoSelecionado.Valor = valor;
-                orcamentoSelecionado.Mes = mes;
-                orcamentoSelecionado.Ano = ano;
+                orcamentoSelecionado.DataInicio = dateTimePickerDataInicio.Value;
+                orcamentoSelecionado.DataFim = dateTimePickerDataFim.Value;
                 OrcamentoController.Atualizar(db, orcamentoSelecionado);
             }
 
             LimparCampos();
-            CarregarLista();
+            AtualizarLista();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (orcamentoSelecionado == null)
             {
@@ -95,12 +87,12 @@ namespace ProjetoDA.View
                 return;
             }
 
-            var confirm = MessageBox.Show($"Eliminar orçamento de {orcamentoSelecionado.Mes:D2}/{orcamentoSelecionado.Ano}?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirm = MessageBox.Show($"Eliminar o orçamento \"{orcamentoSelecionado.Nome}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
                 OrcamentoController.Eliminar(db, orcamentoSelecionado.Id);
                 LimparCampos();
-                CarregarLista();
+                AtualizarLista();
             }
         }
     }

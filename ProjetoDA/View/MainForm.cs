@@ -14,25 +14,23 @@ namespace ProjetoDA
     public partial class MainForm : Form
     {
 
-
         bool sidebarExpand;
         private Dashboard dashboardView;
-        private TipoArtigo tipoArtigoView;
-        private Artigo artigosView;
-        private Orcamento orcamentoView;
+        private TipoArtigoControl tipoArtigoView;
+        private ArtigoControl artigosView;
+        private OrcamentoControl orcamentoView;
         private Estatistica estatisticasView;
-
-
+       
 
         public MainForm()
         {
             InitializeComponent();
-            
-            // Criar uma instância de cada UserControl
+
+            // Criar uma instância de cada UserControl Menu
             dashboardView = new Dashboard();
-            tipoArtigoView = new TipoArtigo();
-            artigosView = new Artigo();
-            orcamentoView = new Orcamento();
+            tipoArtigoView = new TipoArtigoControl();
+            artigosView = new ArtigoControl();
+            orcamentoView = new OrcamentoControl();
             estatisticasView = new Estatistica();
 
 
@@ -40,7 +38,6 @@ namespace ProjetoDA
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(dashboardView);
             dashboardView.Dock = DockStyle.Fill;
-
 
         }
 
@@ -125,6 +122,26 @@ namespace ProjetoDA
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(estatisticasView);
             estatisticasView.Dock = DockStyle.Fill;
+        }
+
+      
+
+        public void ShowOrcamento()
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(orcamentoView);
+            orcamentoView.Dock = DockStyle.Fill;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new View.Login_Page();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+                this.Show();
+            else
+                this.Close();
+
         }
     }
 }

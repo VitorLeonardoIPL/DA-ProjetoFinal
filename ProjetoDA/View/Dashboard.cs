@@ -18,9 +18,15 @@ namespace ProjetoDA.View
 
         private void CarregarCompras()
         {
-            listCompras.DataSource = CompraController.Listar(db).ToList();
-            listCompras.DisplayMember = "DisplayText";
-            listCompras.ValueMember = "Id";
+            listBox1.DataSource = null;
+            listBox1.DataSource = CompraController.Listar(db).ToList();
+            listBox1.DisplayMember = "Nome";
+            listBox1.ValueMember = "Id";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir formulário de nova compra
         }
     }
 }

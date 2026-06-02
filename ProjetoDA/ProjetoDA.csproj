@@ -43,9 +43,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System.Resources.Extensions">
-      <HintPath>packages\System.Resources.Extensions.10.0.7\lib\net462\System.Resources.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -60,6 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Resources.Extensions">
+      <HintPath>packages\System.Resources.Extensions.10.0.7\lib\net462\System.Resources.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AppDbInitializer.cs" />
+    <Compile Include="Model\Utilizador.cs" />
+    <Compile Include="Model\TipoArtigo.cs" />
+    <Compile Include="Model\Artigo.cs" />
+    <Compile Include="Model\Orcamento.cs" />
+    <Compile Include="Model\Compra.cs" />
+    <Compile Include="Model\ItemCompra.cs" />
+    <Compile Include="Model\ItemPrevisto.cs" />
+    <Compile Include="Model\ItemNaoPrevisto.cs" />
+    <Compile Include="Model\ProjetoDAContext.cs" />
     <Compile Include="View\Artigo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="View\Estatistica.Designer.cs">
       <DependentUpon>Estatistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login_Page.Designer.cs">
+      <DependentUpon>Login_Page.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
@@ -103,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estatistica.resx">
       <DependentUpon>Estatistica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login_Page.resx">
+      <DependentUpon>Login_Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -141,17 +162,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Utilizador.cs" />
-    <Compile Include="Model\TipoArtigo.cs" />
-    <Compile Include="Model\Artigo.cs" />
-    <Compile Include="Model\Orcamento.cs" />
-    <Compile Include="Model\Compra.cs" />
-    <Compile Include="Model\ItemCompra.cs" />
-    <Compile Include="Model\ItemPrevisto.cs" />
-    <Compile Include="Model\ItemNaoPrevisto.cs" />
-    <Compile Include="Model\ProjetoDAContext.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
@@ -187,13 +197,6 @@
     <Compile Include="Controller\EstatisticaController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
-  <!-- Copia DLL extra necessária para o Mono runtime (System.Resources.Extensions precisa disto) -->
-  <Target Name="CopyExtraMonoAssemblies" AfterTargets="AfterBuild">
-    <Copy SourceFiles="/usr/lib/mono/msbuild/Current/bin/System.Runtime.CompilerServices.Unsafe.dll"
-          DestinationFolder="$(OutputPath)"
-          Condition="Exists('/usr/lib/mono/msbuild/Current/bin/System.Runtime.CompilerServices.Unsafe.dll') And !Exists('$(OutputPath)\System.Runtime.CompilerServices.Unsafe.dll')" />
-  </Target>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

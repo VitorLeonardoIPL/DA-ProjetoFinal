@@ -49,7 +49,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button_Logout = new System.Windows.Forms.Button();
             this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.contentPanel = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
@@ -299,33 +299,34 @@
             // 
             this.panel9.Location = new System.Drawing.Point(3, 505);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(188, 52);
+            this.panel9.Size = new System.Drawing.Size(197, 52);
             this.panel9.TabIndex = 9;
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.button9);
+            this.panel10.Controls.Add(this.button_Logout);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel10.Location = new System.Drawing.Point(3, 563);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(188, 52);
             this.panel10.TabIndex = 10;
             // 
-            // button9
+            // button_Logout
             // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::ProjetoDA.Properties.Resources.login1;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(-9, -9);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(200, 71);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "           LogOut";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.button_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Logout.ForeColor = System.Drawing.Color.White;
+            this.button_Logout.Image = global::ProjetoDA.Properties.Resources.login1;
+            this.button_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Logout.Location = new System.Drawing.Point(-9, -9);
+            this.button_Logout.Name = "button_Logout";
+            this.button_Logout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button_Logout.Size = new System.Drawing.Size(200, 71);
+            this.button_Logout.TabIndex = 2;
+            this.button_Logout.Text = "           LogOut";
+            this.button_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Logout.UseVisualStyleBackColor = true;
+            this.button_Logout.Click += new System.EventHandler(this.button9_Click);
             // 
             // SidebarTimer
             // 
@@ -388,7 +389,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button_Logout;
         private System.Windows.Forms.Panel panel10;
     }
 }

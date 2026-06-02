@@ -1,16 +1,17 @@
 ﻿using ProjetoDA.Controller;
+using ProjetoDA.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoDA.View
 {
-    public partial class Artigo : UserControl
+    public partial class ArtigoControl : UserControl
     {
-        private Model.ProjetoDAContext db = new Model.ProjetoDAContext();
-        private Model.Artigo artigoSelecionado;
+        private ProjetoDAContext db = new ProjetoDAContext();
+        private Artigo artigoSelecionado;
 
-        public Artigo()
+        public ArtigoControl()
         {
             InitializeComponent();
             CarregarTipos();
@@ -19,82 +20,83 @@ namespace ProjetoDA.View
 
         private void CarregarTipos()
         {
-            var tipos = ArtigoController.ListarTipos(db).ToList();
-
-            cmbFiltrarTipo.Items.Clear();
-            cmbFiltrarTipo.Items.Add("(Todos)");
-            cmbFiltrarTipo.Items.AddRange(tipos.ToArray());
-            cmbFiltrarTipo.DisplayMember = "Nome";
-            cmbFiltrarTipo.SelectedIndex = 0;
-
-            cmbTipoArtigo.Items.Clear();
-            cmbTipoArtigo.Items.AddRange(tipos.ToArray());
-            cmbTipoArtigo.DisplayMember = "Nome";
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = ArtigoController.ListarTipos(db);
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.ValueMember = "Id";
         }
 
         private void CarregarArtigos()
         {
             int? tipoId = null;
-            if (cmbFiltrarTipo.SelectedIndex > 0)
+            if (comboBox1.SelectedIndex >= 0)
             {
-                var tipo = cmbFiltrarTipo.SelectedItem as Model.TipoArtigo;
-                tipoId = tipo?.Id;
+                var tipo = comboBox1.SelectedItem as TipoArtigo;
+                if (tipo != null)
+                    tipoId = tipo.Id;
             }
 
-            listArtigos.DataSource = ArtigoController.ListarArtigos(db, tipoId).ToList();
-            listArtigos.DisplayMember = "Nome";
-            listArtigos.ValueMember = "Id";
+            listBoxArtigo.DataSource = null;
+            listBoxArtigo.DataSource = ArtigoController.ListarArtigos(db, tipoId);
+            listBoxArtigo.DisplayMember = "Nome";
+            listBoxArtigo.ValueMember = "Id";
         }
 
         private void LimparCampos()
         {
-            txtNome.Text = "";
-            txtDescricao.Text = "";
-            cmbTipoArtigo.SelectedIndex = -1;
+            textBoxNomeArtigo.Text = "";
+            textBoxPreco.Text = "";
+            comboBox1.SelectedIndex = -1;
             artigoSelecionado = null;
+            listBoxArtigo.ClearSelected();
         }
 
-        private void listArtigos_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            artigoSelecionado = listArtigos.SelectedItem as Model.Artigo;
+            CarregarArtigos();
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            CarregarTipos();
+        }
+
+        private void listBoxArtigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            artigoSelecionado = listBoxArtigo.SelectedItem as Artigo;
             if (artigoSelecionado != null)
             {
-                txtNome.Text = artigoSelecionado.Nome;
-                txtDescricao.Text = artigoSelecionado.Descricao;
+                textBoxNomeArtigo.Text = artigoSelecionado.Nome;
+                textBoxPreco.Text = artigoSelecionado.Preco.ToString("F2");
 
-                for (int i = 0; i < cmbTipoArtigo.Items.Count; i++)
+                for (int i = 0; i < comboBox1.Items.Count; i++)
                 {
-                    var tipo = cmbTipoArtigo.Items[i] as Model.TipoArtigo;
+                    var tipo = comboBox1.Items[i] as TipoArtigo;
                     if (tipo != null && tipo.Id == artigoSelecionado.TipoArtigoId)
                     {
-                        cmbTipoArtigo.SelectedIndex = i;
+                        comboBox1.SelectedIndex = i;
                         break;
                     }
                 }
             }
         }
 
-        private void cmbFiltrarTipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            CarregarArtigos();
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-            txtNome.Focus();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            if (string.IsNullOrWhiteSpace(textBoxNomeArtigo.Text))
             {
                 MessageBox.Show("O nome é obrigatório.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var tipo = cmbTipoArtigo.SelectedItem as Model.TipoArtigo;
-            if (tipo == null)
+            if (!double.TryParse(textBoxPreco.Text, out double preco) || preco < 0)
+            {
+                MessageBox.Show("Insira um preço válido.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var tipoSelecionado = comboBox1.SelectedItem as TipoArtigo;
+            if (tipoSelecionado == null)
             {
                 MessageBox.Show("Selecione um tipo de artigo.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -102,21 +104,23 @@ namespace ProjetoDA.View
 
             if (artigoSelecionado == null)
             {
-                ArtigoController.InserirArtigo(db, txtNome.Text.Trim(), txtDescricao.Text.Trim(), tipo.Id);
+                ArtigoController controller = new ArtigoController();
+                controller.InserirArtigo(textBoxNomeArtigo.Text.Trim(), preco, tipoSelecionado.Id);
             }
             else
             {
-                artigoSelecionado.Nome = txtNome.Text.Trim();
-                artigoSelecionado.Descricao = txtDescricao.Text.Trim();
-                artigoSelecionado.TipoArtigoId = tipo.Id;
-                ArtigoController.AtualizarArtigo(db, artigoSelecionado);
+                artigoSelecionado.Nome = textBoxNomeArtigo.Text.Trim();
+                artigoSelecionado.Preco = preco;
+                artigoSelecionado.TipoArtigoId = tipoSelecionado.Id;
+                ArtigoController controller = new ArtigoController();
+                controller.AtualizarArtigo(db, artigoSelecionado);
             }
 
             LimparCampos();
             CarregarArtigos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             if (artigoSelecionado == null)
             {
@@ -127,7 +131,8 @@ namespace ProjetoDA.View
             var confirm = MessageBox.Show($"Eliminar o artigo \"{artigoSelecionado.Nome}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                ArtigoController.EliminarArtigo(db, artigoSelecionado.Id);
+                ArtigoController controller = new ArtigoController();
+                controller.EliminarArtigo(db, artigoSelecionado.Id);
                 LimparCampos();
                 CarregarArtigos();
             }

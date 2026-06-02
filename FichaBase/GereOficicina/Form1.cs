@@ -28,7 +28,6 @@ namespace GereOficicina
             using (OficinaContext context = new OficinaContext()) 
             {
 
-            
                 Cliente cliente = new Cliente();
                 cliente.Nome = "Ola";
                 cliente.Nif = "DB";
@@ -47,13 +46,12 @@ namespace GereOficicina
                 context.SaveChanges();
 
             }
-
         }
 
         private void  AtualizarClientes()
         {
             listboxClientes.DataSource = null;
-
+        
             using (OficinaContext context = new OficinaContext())
             {
                 listboxClientes.DataSource = context.Clientes.ToList();
@@ -63,9 +61,7 @@ namespace GereOficicina
         {
             OficinaController controller = new OficinaController();
             try
-            {
-
-
+            {      
                 controller.AdicionarCLiente(textBoxNome.Text, textBoxNif.Text);
             }
             catch (InvalidOperationException ex)

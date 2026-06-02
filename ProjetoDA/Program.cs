@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProjetoDA.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +16,20 @@ namespace ProjetoDA
         [STAThread]
         static void Main()
         {
+            Database.SetInitializer(new AppDbInitializer());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            /*   var loginForm = new View.Login_Page();
+               if (loginForm.ShowDialog() == DialogResult.OK)
+               {
+                   Application.Run(new MainForm());
+               }
+
+               */
+
             Application.Run(new MainForm());
+
         }
     }
 }

@@ -1,54 +1,49 @@
 ﻿using ProjetoDA.Controller;
+using ProjetoDA.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoDA.View
 {
-    public partial class TipoArtigo : UserControl
+    public partial class TipoArtigoControl : UserControl
     {
-        private Model.ProjetoDAContext db = new Model.ProjetoDAContext();
-        private Model.TipoArtigo tipoSelecionado;
+        private ProjetoDAContext db = new ProjetoDAContext();
+        private TipoArtigo tipoSelecionado;
 
-        public TipoArtigo()
+        public TipoArtigoControl()
         {
             InitializeComponent();
-            CarregarLista();
+            AtualizarLista();
         }
 
-        private void CarregarLista()
+        private void AtualizarLista()
         {
-            listTipos.DataSource = ArtigoController.ListarTipos(db).ToList();
-            listTipos.DisplayMember = "Nome";
-            listTipos.ValueMember = "Id";
+            listboxTiposArtigo.DataSource = null;
+            listboxTiposArtigo.DataSource = ArtigoController.ListarTipos(db);
+            listboxTiposArtigo.DisplayMember = "Nome";
+            listboxTiposArtigo.ValueMember = "Id";
         }
 
         private void LimparCampos()
         {
-            txtNome.Text = "";
-            txtDescricao.Text = "";
+            textBoxNome.Text = "";
             tipoSelecionado = null;
+            listboxTiposArtigo.ClearSelected();
         }
 
-        private void listTipos_SelectedIndexChanged(object sender, EventArgs e)
+        private void listboxTiposArtigo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tipoSelecionado = listTipos.SelectedItem as Model.TipoArtigo;
+            tipoSelecionado = listboxTiposArtigo.SelectedItem as TipoArtigo;
             if (tipoSelecionado != null)
             {
-                txtNome.Text = tipoSelecionado.Nome;
-                txtDescricao.Text = tipoSelecionado.Descricao;
+                textBoxNome.Text = tipoSelecionado.Nome;
             }
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void buttonAddTipoArtigo(object sender, EventArgs e)
         {
-            LimparCampos();
-            txtNome.Focus();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            if (string.IsNullOrWhiteSpace(textBoxNome.Text))
             {
                 MessageBox.Show("O nome é obrigatório.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -56,20 +51,23 @@ namespace ProjetoDA.View
 
             if (tipoSelecionado == null)
             {
-                ArtigoController.InserirTipo(db, txtNome.Text.Trim(), txtDescricao.Text.Trim());
+                // Inserir novo
+                ArtigoController controller = new ArtigoController();
+                controller.InserirTipo(textBoxNome.Text.Trim());
             }
             else
             {
-                tipoSelecionado.Nome = txtNome.Text.Trim();
-                tipoSelecionado.Descricao = txtDescricao.Text.Trim();
-                ArtigoController.AtualizarTipo(db, tipoSelecionado);
+                // Atualizar existente
+                tipoSelecionado.Nome = textBoxNome.Text.Trim();
+                ArtigoController controller = new ArtigoController();
+                controller.AtualizarTipo(db, tipoSelecionado);
             }
 
             LimparCampos();
-            CarregarLista();
+            AtualizarLista();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
             if (tipoSelecionado == null)
             {
@@ -80,9 +78,10 @@ namespace ProjetoDA.View
             var confirm = MessageBox.Show($"Eliminar o tipo \"{tipoSelecionado.Nome}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                ArtigoController.EliminarTipo(db, tipoSelecionado.Id);
+                ArtigoController controller = new ArtigoController();
+                controller.EliminarTipo(tipoSelecionado.Id);
                 LimparCampos();
-                CarregarLista();
+                AtualizarLista();
             }
         }
     }

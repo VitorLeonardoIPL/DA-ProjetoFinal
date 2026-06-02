@@ -1,18 +1,26 @@
 using ProjetoDA.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoDA.Controller
 {
-    public static class OrcamentoController
+    public  class OrcamentoController
     {
-        public static IQueryable<Orcamento> Listar(ProjetoDAContext db)
+        public static List<Orcamento> Listar(ProjetoDAContext db)
         {
-            return db.Orcamentos
-                .Include("UtilizadorCriado")
-                .Include("UtilizadorEditou")
-                .OrderByDescending(o => o.Ano)
-                .ThenByDescending(o => o.Mes);
+            return db.Orcamentos.OrderBy(o => o.DataInicio).ToList();
+        }
+
+        public static void Atualizar(ProjetoDAContext db, Orcamento orcamento)
+        {
+            var existente = db.Orcamentos.Find(orcamento.Id);
+            if (existente == null) return;
+            existente.Nome = orcamento.Nome;
+            existente.Valor = orcamento.Valor;
+            existente.DataInicio = orcamento.DataInicio;
+            existente.DataFim = orcamento.DataFim;
+            db.SaveChanges();
         }
 
         public static Orcamento Obter(ProjetoDAContext db, int id)
@@ -23,35 +31,25 @@ namespace ProjetoDA.Controller
         /// <summary>
         /// Retorna o orçamento de um mês/ano específico, ou null se não existir.
         /// </summary>
-        public static Orcamento ObterPorMes(ProjetoDAContext db, int mes, int ano)
-        {
-            return db.Orcamentos.FirstOrDefault(o => o.Mes == mes && o.Ano == ano);
-        }
+       
 
-        public static void Inserir(ProjetoDAContext db, int mes, int ano, decimal valor)
+        public void Inserir(string nome, decimal valor, DateTime datainicio, DateTime datafim)
         {
-            db.Orcamentos.Add(new Orcamento
+            using (ProjetoDAContext context = new ProjetoDAContext())
             {
-                Mes = mes,
-                Ano = ano,
-                Valor = valor,
-                DataCriacao = DateTime.Now,
-                UtilizadorCriadoId = SessaoAtual.UtilizadorLogado?.Id ?? 0
-            });
-            db.SaveChanges();
+
+                Orcamento orcamento = new Orcamento();
+                orcamento.Nome = nome;
+                orcamento.Valor = valor;
+                orcamento.DataInicio = datainicio;
+                orcamento.DataFim = datafim;
+
+
+                context.Orcamentos.Add(orcamento);
+                context.SaveChanges();
+            }
         }
 
-        public static void Atualizar(ProjetoDAContext db, Orcamento orcamento)
-        {
-            var existente = db.Orcamentos.Find(orcamento.Id);
-            if (existente == null) return;
-
-            existente.Valor = orcamento.Valor;
-            existente.Mes = orcamento.Mes;
-            existente.Ano = orcamento.Ano;
-            existente.UtilizadorEditouId = SessaoAtual.UtilizadorLogado?.Id;
-            db.SaveChanges();
-        }
 
         public static void Eliminar(ProjetoDAContext db, int id)
         {
