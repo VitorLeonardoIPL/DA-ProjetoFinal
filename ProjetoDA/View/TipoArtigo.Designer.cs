@@ -75,6 +75,7 @@
             this.listboxTiposArtigo.Name = "listboxTiposArtigo";
             this.listboxTiposArtigo.Size = new System.Drawing.Size(1121, 284);
             this.listboxTiposArtigo.TabIndex = 4;
+            this.listboxTiposArtigo.SelectedIndexChanged += new System.EventHandler(this.listboxTiposArtigo_SelectedIndexChanged);
             // 
             // panel1
             // 
