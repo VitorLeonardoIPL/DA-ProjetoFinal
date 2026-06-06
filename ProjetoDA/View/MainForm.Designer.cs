@@ -140,10 +140,10 @@
             this.button_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button_dashboard.Size = new System.Drawing.Size(200, 71);
             this.button_dashboard.TabIndex = 2;
-            this.button_dashboard.Text = "           Dashboard";
+            this.button_dashboard.Text = "           Planear";
             this.button_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_dashboard.UseVisualStyleBackColor = true;
-            this.button_dashboard.Click += new System.EventHandler(this.button_dashboard_Click);
+            this.button_dashboard.Click += new System.EventHandler(this.button_PlaneamentoClick);
             // 
             // panel4
             // 

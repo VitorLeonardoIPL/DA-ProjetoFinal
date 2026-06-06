@@ -1,4 +1,4 @@
-﻿using ProjetoDA.Controller;
+using ProjetoDA.Controller;
 using ProjetoDA.Model;
 using System;
 using System.Collections.Generic;
@@ -18,8 +18,6 @@ namespace ProjetoDA.View
         {
             InitializeComponent();
             AtualizarOrcamento();
-
-
         }
 
         // Vai buscar todos os orçamentos à base de dados e preenche a listBox
@@ -33,6 +31,7 @@ namespace ProjetoDA.View
             {
                 orcamentoController.Inserir(textBoxNomeOrcamento.Text, decimal.Parse(textBoxValor.Text), dateTimePickerDataInicio.Value, dateTimePickerDataFim.Value);
                 AtualizarOrcamento();
+                LimparCampos();
             }
             catch (InvalidOperationException ex)
             {
@@ -57,6 +56,71 @@ namespace ProjetoDA.View
 
         }
 
-       
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+
+            Orcamento orcamentoSelecionado = listBoxOrcamentos.SelectedItem as Orcamento;
+            try
+            {
+                OrcamentoController orcamentoController = new OrcamentoController();
+                orcamentoController.Eliminar(orcamentoSelecionado.Id);
+
+                AtualizarOrcamento();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao Eliminar o orçamento");
+            }
+
+            if (orcamentoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar orçamento");
+                return;
+            }
+           
+
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+
+            Orcamento orcamentoSelecionado = listBoxOrcamentos.SelectedItem as Orcamento;
+            try
+            {
+                if (orcamentoSelecionado == null)
+                {
+                    MessageBox.Show("Selecionar orçamento");
+                    return;
+                }
+                OrcamentoController orcamentoController = new OrcamentoController();
+                orcamentoController.Editar(orcamentoSelecionado.Id, textBoxNomeOrcamento.Text, dateTimePickerDataInicio.Value, dateTimePickerDataFim.Value, decimal.Parse(textBoxValor.Text));
+
+                LimparCampos();
+                AtualizarOrcamento();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Editar o orçamento");
+            }
+            if (orcamentoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar orçamento");
+                return;
+            }
+
+
+
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNomeOrcamento.Clear(); 
+            textBoxValor.Clear();
+            dateTimePickerDataInicio.Value = DateTime.Now;
+            dateTimePickerDataFim.Value = DateTime.Now;
+        }
+
+
+
     }
 }

@@ -47,7 +47,7 @@ namespace ProjetoDA.Model
             modelBuilder.Entity<Orcamento>()
                 .HasOptional(o => o.UtilizadorEditou)
                 .WithMany()
-                .HasForeignKey(o => o.UtilizadorEditouId); */
+                .HasForeignKey(o => o.UtilizadorEditouId); 
 
             // ItemCompra -> ItemPrevisto: relacao 1 para 0..1
             // ItemPrevisto.Id = FK para ItemCompra.Id (chave partilhada)

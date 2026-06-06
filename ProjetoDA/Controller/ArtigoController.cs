@@ -7,21 +7,18 @@ namespace ProjetoDA.Controller
 {
     public class ArtigoController
     {
+
+
         // ---------- Tipos de Artigo ----------
 
 
-        public  void InserirTipo(string nome)
+        public void InserirTipo(string nome)
         {
-
-            if (string.IsNullOrEmpty(nome))
-            {
-                MessageBox.Show("Nome não pode ser vazio");
-                return;
-            }
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new InvalidOperationException("Nome não pode ser vazio.");
 
             using (ProjetoDAContext context = new ProjetoDAContext())
             {
-
                 TipoArtigo tipoArtigo = new TipoArtigo();
                 tipoArtigo.Nome = nome;
 
@@ -30,26 +27,47 @@ namespace ProjetoDA.Controller
             }
         }
 
-
-        public  void EliminarTipo(int id)
+        public void EditarTipo(int id, string nome)
         {
-            using (ProjetoDAContext db = new ProjetoDAContext())
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new InvalidOperationException("Nome não pode ser vazio.");
+
+            using (ProjetoDAContext context = new ProjetoDAContext())
             {
-                var tipo = db.TiposArtigo.Find(id);
+                var tipo = context.TiposArtigo.Find(id);
+                if (tipo == null) return;
+
+                tipo.Nome = nome;
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminarTipo(int id)
+        {
+            using (ProjetoDAContext context = new ProjetoDAContext())
+            {
+                var tipo = context.TiposArtigo.Find(id);
                 if (tipo != null)
                 {
-                    db.TiposArtigo.Remove(tipo);
-                    db.SaveChanges();
+                    context.TiposArtigo.Remove(tipo);
+                    context.SaveChanges();
                 }
             }
         }
 
+
+
+
         // ---------- Artigos ----------
 
 
-        public  void InserirArtigo(string nome, int preco, int tipoArtigoId)
+        public void InserirArtigo(string nome, double preco, int tipoArtigoId)
         {
-            
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new InvalidOperationException("Nome não pode ser vazio.");
+            if (preco <= 0)
+                throw new InvalidOperationException("Preço deve ser maior que zero.");
+
             using (ProjetoDAContext context = new ProjetoDAContext())
             {
                 Artigo artigo = new Artigo();
@@ -60,29 +78,37 @@ namespace ProjetoDA.Controller
                 context.Artigos.Add(artigo);
                 context.SaveChanges();
             }
-
-
         }
 
-        public  void AtualizarArtigo(ProjetoDAContext db, Artigo artigo)
+        public void EditarArtigo(int id, string nome, double preco, int tipoArtigoId)
         {
-            var existente = db.Artigos.Find(artigo.Id);
-            if (existente == null) return;
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new InvalidOperationException("Nome não pode ser vazio.");
+            if (preco <= 0)
+                throw new InvalidOperationException("Preço deve ser maior que zero.");
 
-            existente.Nome = artigo.Nome;
-            existente.Descricao = artigo.Descricao;
-            existente.TipoArtigoId = artigo.TipoArtigoId;
-            db.SaveChanges();
-        }
-
-
-        public  void EliminarArtigo(ProjetoDAContext db, int id)
-        {
-            var artigo = db.Artigos.Find(id);
-            if (artigo != null)
+            using (ProjetoDAContext context = new ProjetoDAContext())
             {
-                db.Artigos.Remove(artigo);
-                db.SaveChanges();
+                var artigo = context.Artigos.Find(id);
+                if (artigo == null) return;
+
+                artigo.Nome = nome;
+                artigo.Preco = preco;
+                artigo.TipoArtigoId = tipoArtigoId;
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminarArtigo(int id)
+        {
+            using (ProjetoDAContext context = new ProjetoDAContext())
+            {
+                var artigo = context.Artigos.Find(id);
+                if (artigo != null)
+                {
+                    context.Artigos.Remove(artigo);
+                    context.SaveChanges();
+                }
             }
         }
     }

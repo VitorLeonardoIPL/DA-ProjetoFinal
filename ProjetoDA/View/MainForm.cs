@@ -1,4 +1,4 @@
-﻿using ProjetoDA.View;
+using ProjetoDA.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +15,12 @@ namespace ProjetoDA
     {
 
         bool sidebarExpand;
-        private Dashboard dashboardView;
+
         private TipoArtigoControl tipoArtigoView;
         private ArtigoControl artigosView;
         private OrcamentoControl orcamentoView;
         private Estatistica estatisticasView;
+        private CompraPlaneamento compraView;
        
 
         public MainForm()
@@ -27,17 +28,18 @@ namespace ProjetoDA
             InitializeComponent();
 
             // Criar uma instância de cada UserControl Menu
-            dashboardView = new Dashboard();
+ 
             tipoArtigoView = new TipoArtigoControl();
             artigosView = new ArtigoControl();
             orcamentoView = new OrcamentoControl();
             estatisticasView = new Estatistica();
+            compraView = new CompraPlaneamento();
 
 
             // Mostrar o Dashboard por defeito ao abrir
             contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(dashboardView);
-            dashboardView.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(compraView);
+            compraView.Dock = DockStyle.Fill;
 
         }
 
@@ -53,7 +55,7 @@ namespace ProjetoDA
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void SidebarTimer_Tick(object sender, EventArgs e)
@@ -88,11 +90,11 @@ namespace ProjetoDA
             SidebarTimer.Start();
         }
 
-        private void button_dashboard_Click(object sender, EventArgs e)
+        private void button_PlaneamentoClick(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(dashboardView);
-            dashboardView.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(compraView);
+            compraView.Dock = DockStyle.Fill;
 
         }
 
