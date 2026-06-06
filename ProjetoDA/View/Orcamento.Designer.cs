@@ -40,6 +40,7 @@ namespace ProjetoDA.View
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxNomeOrcamento = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +70,7 @@ namespace ProjetoDA.View
             this.buttonNovoOrcamento.ForeColor = System.Drawing.Color.White;
             this.buttonNovoOrcamento.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
             this.buttonNovoOrcamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNovoOrcamento.Location = new System.Drawing.Point(683, 35);
+            this.buttonNovoOrcamento.Location = new System.Drawing.Point(606, 35);
             this.buttonNovoOrcamento.Name = "buttonNovoOrcamento";
             this.buttonNovoOrcamento.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonNovoOrcamento.Size = new System.Drawing.Size(237, 57);
@@ -150,18 +151,35 @@ namespace ProjetoDA.View
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(950, 35);
+            this.button1.Location = new System.Drawing.Point(1093, 35);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(237, 57);
             this.button1.TabIndex = 44;
             this.button1.Text = "Eliminar Orçamento";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(849, 35);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(237, 57);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Editar Orçamento";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // OrcamentoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePickerDataFim);
             this.Controls.Add(this.textBoxValor);
@@ -195,5 +213,6 @@ namespace ProjetoDA.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxNomeOrcamento;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

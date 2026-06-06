@@ -20,13 +20,13 @@ namespace ProjetoDA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /*   var loginForm = new View.Login_Page();
+              var loginForm = new View.Login_Page();
                if (loginForm.ShowDialog() == DialogResult.OK)
                {
                    Application.Run(new MainForm());
                }
 
-               */
+               
 
             Application.Run(new MainForm());
 

@@ -52,9 +52,9 @@ namespace ProjetoDA.Model
             context.SaveChanges();
 
             // --- Orcamentos ---
-            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Maio", Valor = 300, DataInicio = new DateTime(2026, 5, 1), DataFim = new DateTime(2026, 5, 31) });
-            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Junho", Valor = 350, DataInicio = new DateTime(2026, 6, 1), DataFim = new DateTime(2026, 6, 30) });
-            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Julho", Valor = 400, DataInicio = new DateTime(2026, 7, 1), DataFim = new DateTime(2026, 7, 31) });
+            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Maio", Valor = 300, DataInicio = new DateTime(2026, 5, 1), DataFim = new DateTime(2026, 5, 31), UtilizadorCriadoId = admin.Id });
+            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Junho", Valor = 350, DataInicio = new DateTime(2026, 6, 1), DataFim = new DateTime(2026, 6, 30), UtilizadorCriadoId = admin.Id });
+            context.Orcamentos.Add(new Orcamento { Nome = "Orçamento Julho", Valor = 400, DataInicio = new DateTime(2026, 7, 1), DataFim = new DateTime(2026, 7, 31), UtilizadorCriadoId = admin.Id });
             context.SaveChanges();
 
             // --- Compras (2 fechadas + 2 abertas) ---

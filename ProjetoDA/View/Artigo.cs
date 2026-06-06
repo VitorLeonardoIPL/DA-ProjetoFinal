@@ -59,22 +59,66 @@ namespace ProjetoDA.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ArtigoController TipoartigoController = new ArtigoController();
+            ArtigoController controller = new ArtigoController();
             try
             {
                 int tipoArtigoId = (int)comboBox1.SelectedValue;
-                TipoartigoController.InserirArtigo(textBoxNomeArtigo.Text, int.Parse(textBoxPreco.Text), tipoArtigoId);
+                controller.InserirArtigo(textBoxNomeArtigo.Text, double.Parse(textBoxPreco.Text), tipoArtigoId);
                 AtualizarArtigo();
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
+                LimparCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao criar o tipo de artigo");
+                MessageBox.Show("Erro ao criar o artigo");
             }
+        }
 
+        private void buttonEditarArtigo_Click(object sender, EventArgs e)
+        {
+            Artigo artigoSelecionado = listBoxArtigo.SelectedItem as Artigo;
+            if (artigoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar artigo");
+                return;
+            }
+            ArtigoController controller = new ArtigoController();
+            try
+            {
+                int tipoArtigoId = (int)comboBox1.SelectedValue;
+                controller.EditarArtigo(artigoSelecionado.Id, textBoxNomeArtigo.Text, double.Parse(textBoxPreco.Text), tipoArtigoId);
+                AtualizarArtigo();
+                LimparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o artigo");
+            }
+        }
+
+        private void buttonRemoverArtigo_Click(object sender, EventArgs e)
+        {
+            Artigo artigoSelecionado = listBoxArtigo.SelectedItem as Artigo;
+            if (artigoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar artigo");
+                return;
+            }
+            ArtigoController controller = new ArtigoController();
+            try
+            {
+                controller.EliminarArtigo(artigoSelecionado.Id);
+                AtualizarArtigo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o artigo");
+            }
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNomeArtigo.Clear();
+            textBoxPreco.Clear();
         }
     }
 }

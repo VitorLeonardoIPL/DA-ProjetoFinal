@@ -33,6 +33,7 @@
             this.listboxTiposArtigo = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNome = new System.Windows.Forms.Label();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +54,21 @@
             this.buttonAdd.Text = "Novo Tipo de Artigo";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAddTipoArtigo);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonEditar.ForeColor = System.Drawing.Color.White;
+            this.buttonEditar.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditar.Location = new System.Drawing.Point(770, 39);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonEditar.Size = new System.Drawing.Size(237, 57);
+            this.buttonEditar.TabIndex = 10;
+            this.buttonEditar.Text = "Editar Tipo de Artigo";
+            this.buttonEditar.UseVisualStyleBackColor = false;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditarTipo_Click);
             // 
             // label1
             // 
@@ -136,6 +152,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label1);
@@ -157,6 +174,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label3;
     }

@@ -10,14 +10,13 @@ namespace ProjetoDA.Model
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
 
-        /*  public int UtilizadorCriadoId { get; set; }
-          public Utilizador UtilizadorCriado { get; set; }
+        public int UtilizadorCriadoId { get; set; }
+        public Utilizador UtilizadorCriado { get; set; }
+        public int? UtilizadorEditouId { get; set; }
+        public Utilizador UtilizadorEditou { get; set; }
 
-          public int? UtilizadorEditouId { get; set; }
-          public Utilizador UtilizadorEditou { get; set; }
 
-
-          */
+          
 
         public override string ToString()
         {

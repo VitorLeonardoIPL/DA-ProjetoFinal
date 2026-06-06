@@ -8,7 +8,7 @@ namespace ProjetoDA.Controller
     {
        
 
-        public static Orcamento Obter(ProjetoDAContext db, int id)
+        public  Orcamento Obter(ProjetoDAContext db, int id)
         {
             return db.Orcamentos.Find(id);
         }
@@ -23,11 +23,16 @@ namespace ProjetoDA.Controller
             using (ProjetoDAContext context = new ProjetoDAContext())
             {
 
+                bool existe = context.Orcamentos.Any(o => o.DataInicio.Month == datainicio.Month && o.DataInicio.Year == datainicio.Year);
+                if (existe)
+                    throw new InvalidOperationException("Já existe um orçamento para este mês.");
+
                 Orcamento orcamento = new Orcamento();
                 orcamento.Nome = nome;
                 orcamento.Valor = valor;
                 orcamento.DataInicio = datainicio;
                 orcamento.DataFim = datafim;
+                orcamento.UtilizadorCriadoId = SessaoAtual.UtilizadorLogado.Id;
 
 
                 context.Orcamentos.Add(orcamento);
@@ -36,25 +41,46 @@ namespace ProjetoDA.Controller
         }
 
 
-        public static void Eliminar(ProjetoDAContext db, int id)
+        public void Editar(int id, string nome, DateTime dataInicio, DateTime dataFim, decimal novoValor)
         {
-            var orcamento = db.Orcamentos.Find(id);
-            if (orcamento != null)
+            using (ProjetoDAContext context = new ProjetoDAContext())
             {
-                db.Orcamentos.Remove(orcamento);
-                db.SaveChanges();
+                var orcamento = context.Orcamentos.Find(id);
+                 if (orcamento == null) return;
+
+                bool existe = context.Orcamentos.Any(o =>
+                o.Id != id &&
+                o.DataInicio.Month == dataInicio.Month &&
+                o.DataInicio.Year == dataInicio.Year);
+
+                if (existe)
+                throw new Exception("Já existe um orçamento para esse mês.");
+
+                orcamento.Nome = nome;
+                orcamento.DataInicio = dataInicio;
+                orcamento.DataFim = dataFim;
+                orcamento.Valor = novoValor;
+                orcamento.UtilizadorEditouId = SessaoAtual.UtilizadorLogado.Id;
+                context.SaveChanges();
             }
         }
 
-        /// <summary>
-        /// Calcula o total gasto em compras fechadas num determinado mês/ano.
-        /// </summary>
-        public static decimal TotalComprasMes(ProjetoDAContext db, int mes, int ano)
+
+
+        public void Eliminar(int id)
         {
-            return db.Compras
-                .Where(c => c.Fechada && c.DataFechada.Value.Year == ano && c.DataFechada.Value.Month == mes)
-                .Join(db.ItensCompra, c => c.Id, ic => ic.CompraId, (c, ic) => ic)
-                .Sum(ic => (decimal?)ic.QuantidadeAdquirida * ic.PrecoUnitario) ?? 0;
+            using (ProjetoDAContext context = new ProjetoDAContext())
+            {
+                var orcamento = context.Orcamentos.Find(id);
+                if (orcamento != null)
+                {
+                    context.Orcamentos.Remove(orcamento);
+                    context.SaveChanges();
+                }
+            }
         }
+
+       
+      
     }
 }
