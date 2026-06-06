@@ -22,7 +22,18 @@ namespace ProjetoDA.View
         private void ListBoxItens_Format(object sender, ListControlConvertEventArgs e)
         {
             if (e.ListItem is ItemCompra item)
-                e.Value = $"{item.Artigo?.Nome ?? "?"}  |  Qtd Prevista: {(item.ItemPrevisto?.QuantidadePrevista ?? 0)}";
+            {
+                if (item.ItemNaoPrevisto != null)
+                {
+                    e.Value = $"Item Não Previsto: {item.Artigo?.Nome ?? "?"}  |  Qtd: {item.QuantidadeAdquirida}  |  Preco: {item.PrecoUnitario:F2}€";
+                }
+                else
+                {
+                    decimal qtd = item.ItemPrevisto?.QuantidadePrevista ?? 0;
+                    decimal preco = (decimal)(item.Artigo?.Preco ?? 0);
+                    e.Value = $"{item.Artigo?.Nome ?? "?"}  |  Qtd Prevista: {qtd}  |  Preco: {preco:F2}€";
+                }
+            }
         }
 
         public CompraEditar(int id) : this()

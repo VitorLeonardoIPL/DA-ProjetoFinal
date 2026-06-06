@@ -23,18 +23,6 @@ namespace ProjetoDA.View
         private void buttonAddTipoArtigo(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD
-            ArtigoController TipoartigoController = new ArtigoController();
-            try
-            {
-                TipoartigoController.InserirTipo(textBoxNome.Text);
-                AtualizarTiposArtigo();
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-=======
             ArtigoController controller = new ArtigoController();
             try
             {
@@ -42,7 +30,6 @@ namespace ProjetoDA.View
                 AtualizarTiposArtigo();
                 LimparCampos();
             }
->>>>>>> origin/main
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao criar o tipo de artigo");
@@ -60,8 +47,6 @@ namespace ProjetoDA.View
             
         }
 
-<<<<<<< HEAD
-=======
         private void listboxTiposArtigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             TipoArtigo tipoArtigoSelecionado = listboxTiposArtigo.SelectedItem as TipoArtigo;
@@ -96,7 +81,6 @@ namespace ProjetoDA.View
             }
         }
 
->>>>>>> origin/main
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             TipoArtigo tipoArtigoSelecionado = listboxTiposArtigo.SelectedItem as TipoArtigo;
@@ -106,11 +90,6 @@ namespace ProjetoDA.View
                 return;
             }
             ArtigoController controller = new ArtigoController();
-<<<<<<< HEAD
-            controller.EliminarTipo(tipoArtigoSelecionado.Id);
-
-            AtualizarTiposArtigo();
-=======
             try
             {
                 controller.EliminarTipo(tipoArtigoSelecionado.Id);
@@ -125,7 +104,6 @@ namespace ProjetoDA.View
         private void LimparCampos()
         {
             textBoxNome.Clear();
->>>>>>> origin/main
         }
     }
 }

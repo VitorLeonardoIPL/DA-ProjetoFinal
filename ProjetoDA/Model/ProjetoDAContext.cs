@@ -38,7 +38,7 @@ namespace ProjetoDA.Model
                 .HasForeignKey(c => c.UtilizadorEditouId);
 
             // Orcamento tem 2 relacoes para Utilizador (criou, editou)
-          /*  modelBuilder.Entity<Orcamento>()
+            modelBuilder.Entity<Orcamento>()
                 .HasRequired(o => o.UtilizadorCriado)
                 .WithMany()
                 .HasForeignKey(o => o.UtilizadorCriadoId)
