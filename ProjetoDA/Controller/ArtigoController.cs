@@ -7,6 +7,8 @@ namespace ProjetoDA.Controller
 {
     public class ArtigoController
     {
+
+
         // ---------- Tipos de Artigo ----------
 
 
@@ -52,6 +54,9 @@ namespace ProjetoDA.Controller
                 }
             }
         }
+
+
+
 
         // ---------- Artigos ----------
 

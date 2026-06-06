@@ -105,7 +105,7 @@ namespace ProjetoDA.Model
                 PrecoUnitario = 1.29m
             });
             context.SaveChanges();
-            context.ItensPrevisto.Add(new ItemPrevisto { Id = item1.Id, ArtigoId = 1, QuantidadePrevista = 2 });
+            context.ItensPrevisto.Add(new ItemPrevisto { Id = item1.Id, QuantidadePrevista = 2 });
             context.SaveChanges();
 
             var item2 = context.ItensCompra.Add(new ItemCompra
@@ -116,7 +116,7 @@ namespace ProjetoDA.Model
                 PrecoUnitario = 0.99m
             });
             context.SaveChanges();
-            context.ItensPrevisto.Add(new ItemPrevisto { Id = item2.Id, ArtigoId = 4, QuantidadePrevista = 3 });
+            context.ItensPrevisto.Add(new ItemPrevisto { Id = item2.Id, QuantidadePrevista = 3 });
             context.SaveChanges();
 
             var item3 = context.ItensCompra.Add(new ItemCompra
@@ -127,7 +127,7 @@ namespace ProjetoDA.Model
                 PrecoUnitario = 1.10m
             });
             context.SaveChanges();
-            context.ItensNaoPrevisto.Add(new ItemNaoPrevisto { Id = item3.Id, ArtigoId = 7, QuantidadeAdquirida = 6 });
+            context.ItensNaoPrevisto.Add(new ItemNaoPrevisto { Id = item3.Id, Observacoes = "Compra de última hora" });
             context.SaveChanges();
 
             // ---- Itens da Compra 3 (em aberto, previstos) ----
@@ -139,7 +139,7 @@ namespace ProjetoDA.Model
                 PrecoUnitario = 0
             });
             context.SaveChanges();
-            context.ItensPrevisto.Add(new ItemPrevisto { Id = item4.Id, ArtigoId = 5, QuantidadePrevista = 1 });
+            context.ItensPrevisto.Add(new ItemPrevisto { Id = item4.Id, QuantidadePrevista = 1 });
             context.SaveChanges();
 
             var item5 = context.ItensCompra.Add(new ItemCompra
@@ -150,7 +150,7 @@ namespace ProjetoDA.Model
                 PrecoUnitario = 0
             });
             context.SaveChanges();
-            context.ItensPrevisto.Add(new ItemPrevisto { Id = item5.Id, ArtigoId = 3, QuantidadePrevista = 1 });
+            context.ItensPrevisto.Add(new ItemPrevisto { Id = item5.Id, QuantidadePrevista = 1 });
             context.SaveChanges();
 
             base.Seed(context);

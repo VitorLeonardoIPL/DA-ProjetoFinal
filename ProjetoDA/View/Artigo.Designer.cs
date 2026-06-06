@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxArtigo = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonAdicionarArtigo = new System.Windows.Forms.Button();
+            this.buttonRemoverArtigo = new System.Windows.Forms.Button();
             this.buttonEditarArtigo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
@@ -68,20 +68,35 @@
             this.listBoxArtigo.Size = new System.Drawing.Size(1121, 304);
             this.listBoxArtigo.TabIndex = 8;
             // 
-            // button2
+            // buttonAdicionarArtigo
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(627, 43);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(237, 57);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Adicionar Artigo";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonAdicionarArtigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonAdicionarArtigo.ForeColor = System.Drawing.Color.White;
+            this.buttonAdicionarArtigo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonAdicionarArtigo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdicionarArtigo.Location = new System.Drawing.Point(627, 43);
+            this.buttonAdicionarArtigo.Name = "buttonAdicionarArtigo";
+            this.buttonAdicionarArtigo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonAdicionarArtigo.Size = new System.Drawing.Size(237, 57);
+            this.buttonAdicionarArtigo.TabIndex = 34;
+            this.buttonAdicionarArtigo.Text = "Adicionar Artigo";
+            this.buttonAdicionarArtigo.UseVisualStyleBackColor = false;
+            this.buttonAdicionarArtigo.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonRemoverArtigo
+            // 
+            this.buttonRemoverArtigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonRemoverArtigo.ForeColor = System.Drawing.Color.White;
+            this.buttonRemoverArtigo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonRemoverArtigo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemoverArtigo.Location = new System.Drawing.Point(1075, 43);
+            this.buttonRemoverArtigo.Name = "buttonRemoverArtigo";
+            this.buttonRemoverArtigo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonRemoverArtigo.Size = new System.Drawing.Size(237, 57);
+            this.buttonRemoverArtigo.TabIndex = 33;
+            this.buttonRemoverArtigo.Text = "Remover Artigo";
+            this.buttonRemoverArtigo.UseVisualStyleBackColor = false;
+            this.buttonRemoverArtigo.Click += new System.EventHandler(this.buttonRemoverArtigo_Click);
             // 
             // buttonEditarArtigo
             // 
@@ -97,21 +112,6 @@
             this.buttonEditarArtigo.Text = "Editar Artigo";
             this.buttonEditarArtigo.UseVisualStyleBackColor = false;
             this.buttonEditarArtigo.Click += new System.EventHandler(this.buttonEditarArtigo_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(1075, 43);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(237, 57);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Remover Artigo";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.buttonRemoverArtigo_Click);
             // 
             // label4
             // 
@@ -219,9 +219,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNomeArtigo);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAdicionarArtigo);
             this.Controls.Add(this.buttonEditarArtigo);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonRemoverArtigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxArtigo);
             this.Name = "ArtigoControl";
@@ -236,9 +236,9 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxArtigo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAdicionarArtigo;
         private System.Windows.Forms.Button buttonEditarArtigo;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonRemoverArtigo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxPreco;
         private System.Windows.Forms.Label label3;

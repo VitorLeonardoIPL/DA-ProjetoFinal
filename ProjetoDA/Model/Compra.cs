@@ -26,5 +26,11 @@ namespace ProjetoDA.Model
         public Utilizador UtilizadorEditou { get; set; }
 
         public List<ItemCompra> ItensCompra { get; set; }
+
+        public override string ToString()
+        {
+            string estado = Fechada ? "Fechada" : "Aberta";
+            return $"{Nome,-30} {estado,-10} {DataCriacao:dd/MM/yyyy}";
+        }
     }
 }

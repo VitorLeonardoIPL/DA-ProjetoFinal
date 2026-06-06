@@ -28,47 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonAddTipo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listboxTiposArtigo = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNome = new System.Windows.Forms.Label();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
+            this.buttonEditarTipo = new System.Windows.Forms.Button();
+            this.buttonRemoveTipo = new System.Windows.Forms.Button();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonAdd
+            // buttonAddTipo
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(637, 39);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonAdd.Size = new System.Drawing.Size(237, 57);
-            this.buttonAdd.TabIndex = 7;
-            this.buttonAdd.Text = "Novo Tipo de Artigo";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAddTipoArtigo);
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.buttonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditar.Location = new System.Drawing.Point(770, 39);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonEditar.Size = new System.Drawing.Size(237, 57);
-            this.buttonEditar.TabIndex = 10;
-            this.buttonEditar.Text = "Editar Tipo de Artigo";
-            this.buttonEditar.UseVisualStyleBackColor = false;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditarTipo_Click);
+            this.buttonAddTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonAddTipo.ForeColor = System.Drawing.Color.White;
+            this.buttonAddTipo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonAddTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddTipo.Location = new System.Drawing.Point(527, 39);
+            this.buttonAddTipo.Name = "buttonAddTipo";
+            this.buttonAddTipo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonAddTipo.Size = new System.Drawing.Size(237, 57);
+            this.buttonAddTipo.TabIndex = 7;
+            this.buttonAddTipo.Text = "Novo Tipo de Artigo";
+            this.buttonAddTipo.UseVisualStyleBackColor = false;
+            this.buttonAddTipo.Click += new System.EventHandler(this.buttonAddTipoArtigo);
             // 
             // label1
             // 
@@ -113,21 +98,36 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // buttonRemove
+            // buttonEditarTipo
             // 
-            this.buttonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.buttonRemove.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
-            this.buttonRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemove.Location = new System.Drawing.Point(904, 39);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonRemove.Size = new System.Drawing.Size(237, 57);
-            this.buttonRemove.TabIndex = 9;
-            this.buttonRemove.Text = "       Remover Tipo de Artigo";
-            this.buttonRemove.UseVisualStyleBackColor = false;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            this.buttonEditarTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonEditarTipo.ForeColor = System.Drawing.Color.White;
+            this.buttonEditarTipo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonEditarTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarTipo.Location = new System.Drawing.Point(770, 39);
+            this.buttonEditarTipo.Name = "buttonEditarTipo";
+            this.buttonEditarTipo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonEditarTipo.Size = new System.Drawing.Size(237, 57);
+            this.buttonEditarTipo.TabIndex = 10;
+            this.buttonEditarTipo.Text = "Editar Tipo de Artigo";
+            this.buttonEditarTipo.UseVisualStyleBackColor = false;
+            this.buttonEditarTipo.Click += new System.EventHandler(this.buttonEditarTipo_Click);
+            // 
+            // buttonRemoveTipo
+            // 
+            this.buttonRemoveTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.buttonRemoveTipo.ForeColor = System.Drawing.Color.White;
+            this.buttonRemoveTipo.Image = global::ProjetoDA.Properties.Resources.icons8_plus_26;
+            this.buttonRemoveTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemoveTipo.Location = new System.Drawing.Point(1012, 39);
+            this.buttonRemoveTipo.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.buttonRemoveTipo.Name = "buttonRemoveTipo";
+            this.buttonRemoveTipo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonRemoveTipo.Size = new System.Drawing.Size(237, 57);
+            this.buttonRemoveTipo.TabIndex = 9;
+            this.buttonRemoveTipo.Text = "       Remover Tipo de Artigo";
+            this.buttonRemoveTipo.UseVisualStyleBackColor = false;
+            this.buttonRemoveTipo.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // textBoxNome
             // 
@@ -151,10 +151,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.buttonEditar);
+            this.Controls.Add(this.buttonRemoveTipo);
+            this.Controls.Add(this.buttonEditarTipo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonAddTipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listboxTiposArtigo);
             this.Name = "TipoArtigoControl";
@@ -168,13 +168,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonAddTipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listboxTiposArtigo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelNome;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Button buttonEditar;
+        private System.Windows.Forms.Button buttonRemoveTipo;
+        private System.Windows.Forms.Button buttonEditarTipo;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label3;
     }
