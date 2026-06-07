@@ -110,6 +110,12 @@
     <Compile Include="View\TipoArtigo.Designer.cs">
       <DependentUpon>TipoArtigo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UtilizadorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UtilizadorControl.Designer.cs">
+      <DependentUpon>UtilizadorControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CompraPlaneamento.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TipoArtigo.resx">
       <DependentUpon>TipoArtigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilizadorControl.resx">
+      <DependentUpon>UtilizadorControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
