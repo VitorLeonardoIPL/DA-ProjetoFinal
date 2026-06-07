@@ -1,12 +1,27 @@
 using ProjetoDA.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoDA.Controller
 {
     public  class OrcamentoController
     {
-       
+        public static List<Orcamento> Listar(ProjetoDAContext db)
+        {
+            return db.Orcamentos.OrderBy(o => o.DataInicio).ToList();
+        }
+
+        public static void Atualizar(ProjetoDAContext db, Orcamento orcamento)
+        {
+            var existente = db.Orcamentos.Find(orcamento.Id);
+            if (existente == null) return;
+            existente.Nome = orcamento.Nome;
+            existente.Valor = orcamento.Valor;
+            existente.DataInicio = orcamento.DataInicio;
+            existente.DataFim = orcamento.DataFim;
+            db.SaveChanges();
+        }
 
         public  Orcamento Obter(ProjetoDAContext db, int id)
         {
