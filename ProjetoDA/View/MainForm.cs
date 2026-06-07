@@ -21,6 +21,7 @@ namespace ProjetoDA
         private OrcamentoControl orcamentoView;
         private Estatistica estatisticasView;
         private CompraPlaneamento compraView;
+        private UtilizadorControl utilizadorView;
        
 
         public MainForm()
@@ -34,6 +35,7 @@ namespace ProjetoDA
             orcamentoView = new OrcamentoControl();
             estatisticasView = new Estatistica();
             compraView = new CompraPlaneamento();
+            utilizadorView = new UtilizadorControl();
 
 
             // Mostrar o Dashboard por defeito ao abrir
@@ -126,7 +128,12 @@ namespace ProjetoDA
             estatisticasView.Dock = DockStyle.Fill;
         }
 
-      
+        private void button_Utilizadores_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(utilizadorView);
+            utilizadorView.Dock = DockStyle.Fill;
+        }
 
         public void ShowOrcamento()
         {

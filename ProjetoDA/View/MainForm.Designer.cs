@@ -46,7 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button_Utilizadores = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button_Logout = new System.Windows.Forms.Button();
@@ -273,27 +273,28 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.button8);
+            this.panel8.Controls.Add(this.button_Utilizadores);
             this.panel8.Location = new System.Drawing.Point(3, 447);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(188, 52);
             this.panel8.TabIndex = 8;
             // 
-            // button8
+            // button_Utilizadores
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::ProjetoDA.Properties.Resources.estatistica;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(-3, -10);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(220, 71);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "           CENAS1";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
+            this.button_Utilizadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Utilizadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Utilizadores.ForeColor = System.Drawing.Color.White;
+            this.button_Utilizadores.Image = global::ProjetoDA.Properties.Resources.estatistica;
+            this.button_Utilizadores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Utilizadores.Location = new System.Drawing.Point(-3, -10);
+            this.button_Utilizadores.Name = "button_Utilizadores";
+            this.button_Utilizadores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button_Utilizadores.Size = new System.Drawing.Size(220, 71);
+            this.button_Utilizadores.TabIndex = 2;
+            this.button_Utilizadores.Text = "           Utilizadores";
+            this.button_Utilizadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Utilizadores.UseVisualStyleBackColor = true;
+            this.button_Utilizadores.Click += new System.EventHandler(this.button_Utilizadores_Click);
             // 
             // panel9
             // 
@@ -387,7 +388,7 @@
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button_Utilizadores;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button_Logout;
         private System.Windows.Forms.Panel panel10;
