@@ -37,19 +37,29 @@ namespace ProjetoDA.View
 
         private void AtualizarArtigo()
         {
-                
             listBoxArtigo.DataSource = null;
 
             using (ProjetoDAContext context = new ProjetoDAContext())
             {
-                listBoxArtigo.DataSource = context.Artigos.ToList();
+                TipoArtigo tipoSelecionado = comboBox1.SelectedItem as TipoArtigo;
+
+                if (tipoSelecionado != null)
+                {
+                    listBoxArtigo.DataSource = context.Artigos
+                        .Where(a => a.TipoArtigoId == tipoSelecionado.Id)
+                        .ToList();
+                }
+                else
+                {
+                    listBoxArtigo.DataSource = context.Artigos.ToList();
+                }
             }
         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            AtualizarArtigo();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
