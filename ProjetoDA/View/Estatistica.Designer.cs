@@ -150,7 +150,7 @@
             // listBoxMensal
             // 
             this.listBoxMensal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxMensal.Font = new System.Drawing.Font("Courier New", 10.2F);
+            this.listBoxMensal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxMensal.ForeColor = System.Drawing.Color.White;
             this.listBoxMensal.FormattingEnabled = true;
             this.listBoxMensal.ItemHeight = 20;
@@ -210,7 +210,7 @@
             // listBoxSugestoes
             // 
             this.listBoxSugestoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxSugestoes.Font = new System.Drawing.Font("Courier New", 9F);
+            this.listBoxSugestoes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxSugestoes.ForeColor = System.Drawing.Color.White;
             this.listBoxSugestoes.FormattingEnabled = true;
             this.listBoxSugestoes.ItemHeight = 18;
@@ -233,7 +233,7 @@
             // listBoxAnalise
             // 
             this.listBoxAnalise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxAnalise.Font = new System.Drawing.Font("Courier New", 9F);
+            this.listBoxAnalise.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxAnalise.ForeColor = System.Drawing.Color.White;
             this.listBoxAnalise.FormattingEnabled = true;
             this.listBoxAnalise.ItemHeight = 18;

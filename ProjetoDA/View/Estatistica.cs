@@ -29,9 +29,6 @@ namespace ProjetoDA.View
             {
                 var dados = EstatisticaController.ListagemMensal(db);
                 listBoxMensal.DataSource = dados;
-                listBoxMensal.DisplayMember = "Item1";
-                listBoxMensal.ValueMember = "Item1";
-
                 listBoxMensal.DataSource = null;
                 listBoxMensal.Items.Clear();
                 foreach (var item in dados)
