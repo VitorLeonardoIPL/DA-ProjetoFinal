@@ -56,6 +56,7 @@ namespace ProjetoDA.View
             // listBoxOrcamentos
             // 
             this.listBoxOrcamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.listBoxOrcamentos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxOrcamentos.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.listBoxOrcamentos.FormattingEnabled = true;
             this.listBoxOrcamentos.ItemHeight = 16;

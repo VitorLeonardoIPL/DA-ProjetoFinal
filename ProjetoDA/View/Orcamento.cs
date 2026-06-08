@@ -58,27 +58,23 @@ namespace ProjetoDA.View
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-
             Orcamento orcamentoSelecionado = listBoxOrcamentos.SelectedItem as Orcamento;
+            if (orcamentoSelecionado == null)
+            {
+                MessageBox.Show("Selecionar orçamento");
+                return;
+            }
+
             try
             {
                 OrcamentoController orcamentoController = new OrcamentoController();
                 orcamentoController.Eliminar(orcamentoSelecionado.Id);
-
                 AtualizarOrcamento();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Erro ao Eliminar o orçamento");
             }
-
-            if (orcamentoSelecionado == null)
-            {
-                MessageBox.Show("Selecionar orçamento");
-                return;
-            }
-           
-
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
