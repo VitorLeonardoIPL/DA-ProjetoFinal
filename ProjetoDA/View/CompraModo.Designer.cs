@@ -32,7 +32,15 @@ namespace ProjetoDA.View
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonRegistarAquisicao = new System.Windows.Forms.Button();
+            this.labelQtdAquisicao = new System.Windows.Forms.Label();
+            this.numericQtdAquisicao = new System.Windows.Forms.NumericUpDown();
+            this.labelPrecoAquisicao = new System.Windows.Forms.Label();
+            this.numericPrecoAquisicao = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrecoUnitario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdAquisicao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrecoAquisicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrecoUnitario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +69,7 @@ namespace ProjetoDA.View
             // 
             this.listBoxItens.BackColor = System.Drawing.Color.FromArgb(35, 40, 45);
             this.listBoxItens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxItens.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listBoxItens.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxItens.ForeColor = System.Drawing.Color.White;
             this.listBoxItens.FormattingEnabled = true;
             this.listBoxItens.ItemHeight = 17;
@@ -69,6 +77,7 @@ namespace ProjetoDA.View
             this.listBoxItens.Name = "listBoxItens";
             this.listBoxItens.Size = new System.Drawing.Size(760, 200);
             this.listBoxItens.TabIndex = 2;
+            this.listBoxItens.SelectedIndexChanged += new System.EventHandler(this.listBoxItens_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -233,12 +242,65 @@ namespace ProjetoDA.View
             this.buttonVoltar.UseVisualStyleBackColor = false;
             this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
+            // labelQtdAquisicao
+            // 
+            this.labelQtdAquisicao.AutoSize = true;
+            this.labelQtdAquisicao.Location = new System.Drawing.Point(100, 425);
+            this.labelQtdAquisicao.Name = "labelQtdAquisicao";
+            this.labelQtdAquisicao.Size = new System.Drawing.Size(27, 16);
+            this.labelQtdAquisicao.TabIndex = 12;
+            this.labelQtdAquisicao.Text = "Qtd";
+            // 
+            // numericQtdAquisicao
+            // 
+            this.numericQtdAquisicao.Location = new System.Drawing.Point(130, 423);
+            this.numericQtdAquisicao.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            this.numericQtdAquisicao.Name = "numericQtdAquisicao";
+            this.numericQtdAquisicao.Size = new System.Drawing.Size(70, 22);
+            this.numericQtdAquisicao.TabIndex = 13;
+            this.numericQtdAquisicao.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // labelPrecoAquisicao
+            // 
+            this.labelPrecoAquisicao.AutoSize = true;
+            this.labelPrecoAquisicao.Location = new System.Drawing.Point(210, 425);
+            this.labelPrecoAquisicao.Name = "labelPrecoAquisicao";
+            this.labelPrecoAquisicao.Size = new System.Drawing.Size(44, 16);
+            this.labelPrecoAquisicao.TabIndex = 14;
+            this.labelPrecoAquisicao.Text = "Preço";
+            // 
+            // numericPrecoAquisicao
+            // 
+            this.numericPrecoAquisicao.DecimalPlaces = 2;
+            this.numericPrecoAquisicao.Location = new System.Drawing.Point(255, 423);
+            this.numericPrecoAquisicao.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            this.numericPrecoAquisicao.Name = "numericPrecoAquisicao";
+            this.numericPrecoAquisicao.Size = new System.Drawing.Size(80, 22);
+            this.numericPrecoAquisicao.TabIndex = 15;
+            // 
+            // buttonRegistarAquisicao
+            // 
+            this.buttonRegistarAquisicao.BackColor = System.Drawing.Color.FromArgb(35, 40, 45);
+            this.buttonRegistarAquisicao.ForeColor = System.Drawing.Color.White;
+            this.buttonRegistarAquisicao.Location = new System.Drawing.Point(350, 420);
+            this.buttonRegistarAquisicao.Name = "buttonRegistarAquisicao";
+            this.buttonRegistarAquisicao.Size = new System.Drawing.Size(170, 40);
+            this.buttonRegistarAquisicao.TabIndex = 11;
+            this.buttonRegistarAquisicao.Text = "Registar Aquisição";
+            this.buttonRegistarAquisicao.UseVisualStyleBackColor = false;
+            this.buttonRegistarAquisicao.Click += new System.EventHandler(this.buttonRegistarAquisicao_Click);
+            // 
             // CompraModo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 494);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.buttonFechar);
+            this.Controls.Add(this.buttonRegistarAquisicao);
+            this.Controls.Add(this.numericPrecoAquisicao);
+            this.Controls.Add(this.labelPrecoAquisicao);
+            this.Controls.Add(this.numericQtdAquisicao);
+            this.Controls.Add(this.labelQtdAquisicao);
             this.Controls.Add(this.labelOrcamento);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.groupBox1);
@@ -251,6 +313,8 @@ namespace ProjetoDA.View
             this.Text = "Modo Compra";
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrecoUnitario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdAquisicao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrecoAquisicao)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,5 +340,10 @@ namespace ProjetoDA.View
         private System.Windows.Forms.Label labelOrcamento;
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.Button buttonVoltar;
+        private System.Windows.Forms.Button buttonRegistarAquisicao;
+        private System.Windows.Forms.Label labelQtdAquisicao;
+        private System.Windows.Forms.NumericUpDown numericQtdAquisicao;
+        private System.Windows.Forms.Label labelPrecoAquisicao;
+        private System.Windows.Forms.NumericUpDown numericPrecoAquisicao;
     }
 }
