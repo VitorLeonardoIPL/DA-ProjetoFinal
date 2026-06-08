@@ -185,7 +185,7 @@ namespace ProjetoDA.View
             // listBoxUtilizadores
             // 
             this.listBoxUtilizadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxUtilizadores.Font = new System.Drawing.Font("Courier New", 10.2F);
+            this.listBoxUtilizadores.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxUtilizadores.ForeColor = System.Drawing.Color.White;
             this.listBoxUtilizadores.FormattingEnabled = true;
             this.listBoxUtilizadores.ItemHeight = 20;

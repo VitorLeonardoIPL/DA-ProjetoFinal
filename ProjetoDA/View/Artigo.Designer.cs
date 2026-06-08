@@ -59,7 +59,7 @@ namespace ProjetoDA.View
             // listBoxArtigo
             // 
             this.listBoxArtigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listBoxArtigo.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxArtigo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxArtigo.ForeColor = System.Drawing.Color.White;
             this.listBoxArtigo.FormattingEnabled = true;
             this.listBoxArtigo.ItemHeight = 20;

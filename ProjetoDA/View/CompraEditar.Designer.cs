@@ -157,7 +157,7 @@ namespace ProjetoDA.View
             // 
             this.listBoxItens.BackColor = System.Drawing.Color.FromArgb(35, 40, 45);
             this.listBoxItens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxItens.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listBoxItens.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxItens.ForeColor = System.Drawing.Color.White;
             this.listBoxItens.FormattingEnabled = true;
             this.listBoxItens.ItemHeight = 17;

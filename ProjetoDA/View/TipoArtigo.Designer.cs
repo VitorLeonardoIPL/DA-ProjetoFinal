@@ -68,7 +68,7 @@
             // listboxTiposArtigo
             // 
             this.listboxTiposArtigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.listboxTiposArtigo.Font = new System.Drawing.Font("Courier New", 10.2F);
+            this.listboxTiposArtigo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listboxTiposArtigo.ForeColor = System.Drawing.Color.White;
             this.listboxTiposArtigo.FormattingEnabled = true;
             this.listboxTiposArtigo.ItemHeight = 20;

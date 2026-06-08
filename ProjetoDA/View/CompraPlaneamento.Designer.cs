@@ -83,6 +83,7 @@ namespace ProjetoDA.View
             // listBoxCompras
             // 
             this.listBoxCompras.BackColor = System.Drawing.Color.FromArgb(35, 40, 45);
+            this.listBoxCompras.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listBoxCompras.ForeColor = System.Drawing.Color.White;
             this.listBoxCompras.FormattingEnabled = true;
             this.listBoxCompras.ItemHeight = 16;
